@@ -5,26 +5,26 @@
         <h3>Create your Google Account</h3>
       </div>
       <div class="name">
-        <input type="name" name="" value="" required />
+        <input type="name"  required pattern="[A-Za-z]{3,10}" />
         <label>First name</label>
       </div>
       <div class="name">
-        <input type="name" required />
+        <input type="name" required pattern="[A-Za-z]{3,10}" />
         <label>Last name</label>
       </div>
       <div class="user-name">
-        <input type="username" required />
+        <input type="username" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
         <label>Username</label>
         <span class="gmail">@gmail.com</span>
       </div>
       <a class="line1">You can use letters, numbers & periods</a>
       <a  class="line2">Use my current email address instead</a>
       <div class="pass">
-        <input type="password" class="password" id="pass" required />
+        <input type="password" class="password" id="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" required />
         <label>Password</label>
       </div>
       <div class="pass">
-        <input type="password" class="password" id="pass" required />
+        <input type="password" class="password" id="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"  required />
         <label>Confirm</label>
       </div>
       <div class="iconeye">
