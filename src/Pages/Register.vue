@@ -1,51 +1,54 @@
 <template>
-  <div class="main">
-    <form class="" action="Register.vue">
-      <div class="head">
-        <h3>Create your Google Account</h3>
+  <div class="container">
+    <div class="title">
+      <h2><Title /></h2>
+      <h3>Create your Google Account</h3>
+    </div>
+    <form>
+      <div class="user-details">
+        <div class="input-box">
+          <input type="name" required />
+          <label class="details">First name</label>
+        </div>
+        <div class="input-box">
+          <input type="name" required />
+          <label class="details">Last name</label>
+        </div>
+        <div class="input-box-email">
+          <input type="username" required />
+          <label class="details-email">Username</label>
+          <span class="span-email">@gmail.com</span>
+        </div>
+        <a class="a-tag-1">You can use letters, numbers & periods</a>
+        <a href="" class="a-tag-2">Use my current email address instead</a>
+        <div class="input-box">
+          <input type="password" class="password" id="pass1" required />
+          <label class="details">Password</label>
+        </div>
+        <div class="input-box">
+          <input type="password" class="password" id="pass2" required />
+          <label class="details">Confirm</label>
+        </div>
+        <div class="iconeye">
+          <img src="../assets/eyelogo.png"  id="eye" />
+        </div>
+        <a class="a-tag-3">Use 8 or more characters with a mix of letters, numbers & symbols</a>
+        <a href="" class="a-tag-3">Sign in instead</a>
+        <input type="submit" value="Next" />
       </div>
-      <div class="name">
-        <input type="name"  required pattern="[A-Za-z]{3,10}" />
-        <label>First name</label>
-      </div>
-      <div class="name">
-        <input type="name" required pattern="[A-Za-z]{3,10}" />
-        <label>Last name</label>
-      </div>
-      <div class="user-name">
-        <input type="username" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
-        <label>Username</label>
-        <span class="gmail">@gmail.com</span>
-      </div>
-      <a class="line1">You can use letters, numbers & periods</a>
-      <a  class="line2">Use my current email address instead</a>
-      <div class="pass">
-        <input type="password" class="password" id="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" required />
-        <label>Password</label>
-      </div>
-      <div class="pass">
-        <input type="password" class="password" id="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"  required />
-        <label>Confirm</label>
-      </div>
-      <div class="iconeye">
-        <img src="../assets/eyelogo.png" id="eye" />
-      </div>
-      <a class="line3"
-        >Use 8 or more characters with a mix of letters, numbers & symbols</a
-      >
-      <a href="http://localhost:8080/login" class="line4">Sign in instead</a>
-      <input type="submit" value="Next" />
     </form>
-    <div class="side-image">
-      <img src="../assets/googlesidelogo.png" alt="" id="side-logo" />
+    <div class="input-box">
+      <img src="../assets/googlesidelogo.png" alt="" class="side-logo" />
     </div>
   </div>
 </template>
 
 <script>
+import Title from "./Title.vue";
 export default {
-  data() {
-    return {};
+  name: "Register",
+  components: {
+    Title,
   },
 };
 </script>
