@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
 }
 
 body {
@@ -15,8 +14,8 @@ body {
 }
 
 .container {
-  max-width: 700px;
-  width: 100%;
+  height: 1000px;
+  width: 1100px;
   background: $white;
   padding: 25px 30px;
   border-radius: 8px;
@@ -30,10 +29,11 @@ body {
   position: relative;
   display: flex;
   justify-content: flex-start;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .container .title h3 {
-  font-size: 25px;
+  font-size: 45px;
   font-weight: 500;
   font-family: "Times New Roman", Times, serif;
   color: $black;
@@ -42,154 +42,226 @@ body {
   justify-content: flex-start;
 }
 
-form .user-details {
+.user-details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-form .user-details .input-box {
-  margin: 20px 20px 10px 0px;
-  width: calc(100% / 2 - 20px);
+.input-box {
+  width: calc(100% / 3 - 10px);
+  margin-top: 40px;
+  margin-right: 20px;
 }
 
-.user-details .input-box input {
-  height: 40px;
-  width: 100%;
-  border-radius: 5px;
-  border-width: 1px;
-  border-color: $black;
-  padding-left: 12px;
-  outline: none;
+.input-box-password {
+  width: calc(100% / 3 - 10px);
+  margin-top: 40px;
+  margin-right: 20px;
 }
 
-form .user-details .input-box-email {
-  width: 100%;
-  padding: 10px 325px 40px 150px;
-  margin: 10px 0px -30px 0px;
-}
-
-.user-details .input-box-email input {
-  height: 35px;
-  width: 380%;
-  margin-left: -151px;
-  border-radius: 5px;
-  border-width: 1px;
-  border-color: $black;
-  outline: none;
-}
-
-.input-box-email .details-email {
+.input-box input {
   display: flex;
-  justify-content: flex-start;
-  margin-right: 150%;
-  margin-left: -93%;
+  justify-content: center;
+  height: 52px;
+  width: 340px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: rgba(72, 78, 78, 0.431);
+  margin-left: 1px;
+  outline: none;
+  position: relative;
+  font-size: 25px;
 }
 
-.input-box-email .span-email {
+.input-box-password input {
   display: flex;
-  align-items: flex-start;
-  margin-right: 150%;
-  margin-left: 229%;
-  padding-bottom: 10px;
+  justify-content: center;
+  height: 52px;
+  width: 340px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: rgba(72, 78, 78, 0.431);
+  margin-left: 1px;
+  outline: none;
+  position: relative;
+  font-size: 25px;
+}
+
+.input-box-email {
+  height: 60px;
+  border-radius: 5px;
+  border-width: 0.1px;
+  border-color: rgb(209, 193, 193);
+}
+
+.input-box-email input {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  width: 695px;
+  border-radius: 5px;
+  border-width: 0.1px;
+  border-color: rgb(209, 193, 193);
+  margin-left: 2px;
+  outline: none;
+  position: relative;
+  font-size: 25px;
+  padding-left: 5px;
+  margin-top: 15px;
+}
+
+.user-details .a-email {
+  top: 25px;
+  left: -160px;
 }
 
 .user-details .a-tag-1 {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
+  margin-top: 30px;
+  margin-left: -290px;
+  width: 100%;
+}
+
+.user-details .a-tag-2 {
+  font-size: 25px;
+  font-weight: 530;
+  margin-top: 20px;
+  margin-left: -300px;
+  width: 100%;
+  color: blue;
+  text-decoration: none;
+}
+
+.user-details .a-tag-3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: -220px;
+  width: 100%;
+}
+
+.user-details .a-tag-4 {
+  font-size: 26px;
+  font-weight: 450;
+  margin-top: 120px;
+  margin-left: -430px;
+  width: 100%;
+  color: blue;
+  text-decoration: none;
+}
+
+.user-details .Next-btn {
+  font-size: 25px;
+  background: blue;
+}
+
+input[type="submit"] {
+  background: $blue;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 120px 0 30px -10px;
+  font-size: 28px;
+}
+
+input[type="submit"]:hover {
+  background: $blue;
+}
+
+#eye {
+  display: block;
+  position: relative;
+  top: 52px;
+  right: 60px;
+  width: 37px;
+  cursor: pointer;
+}
+
+.google-side-image {
+  display: flex;
+  justify-content: flex-end;
+  display: inline-block;
+  position: relative;
+  top: -990px;
+  left: 220px;
+  transform: translate(50%, 50%);
+}
+
+.side-logo {
+  width: 320px;
+  height: 620px;
 }
 
 .user-details label {
-  display: flex;
-  justify-content: start;
   position: relative;
   font-family: roboto;
   color: $light_grey;
-  font-size: 20px;
+  font-size: 30px;
   pointer-events: none;
-  top: -30px;
+  top: -45px;
   left: 7px;
   transition: 0.2s all;
 }
 
-input:focus ~ label,
-input:valid ~ label {
-  top: -45px;
+.input-box label {
+  position: relative;
+  font-family: roboto;
+  color: $light_grey;
+  font-size: 28px;
+  pointer-events: none;
+  left: -100px;
+  top: -41px;
+  transition: 0.2s all;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -69px;
+  left: -95px;
   background: $white;
-  padding: 0 2px;
-  font-size: 12px;
+  padding: 0 5px;
+  font-size: 25px;
   color: $blue;
 }
 
-// input:focus ~ .user,
-// input:valid ~ .user {
-//   top: -49px;
-//   right: 330px;
-//   background: $white;
-//   padding: 0 5px;
-//   font-size: 10px;
-//   color: $blue;
-// }
-
-// a {
-//   position: relative;
-//   font-family: roboto;
-//   text-decoration: none;
-//   display: block;
-// }
-// .line1 {
-//   font-size: 1px;
-//   margin: -20px -80px 20px -515px;
-// }
-// .line2 {
-//   color: $blue;
-//   font-size: 15px;
-//   margin: 20px 20px 20px -515px;
-// }
-
-// .line3 {
-//   font-size: 12px;
-//   margin: 10px 18px 0px -25px;
-//   width: 310px;
-// }
-
-// .line4 {
-//   font-size: 15px;
-//   margin: 20px 88px 0px -295px;
-//   color: $blue;
-//   display: inline-block;
-//   font-family: arial rounded mt;
-// }
-
-// input[type="submit"] {
-//   background: $blue;
-//   color: $white;
-//   border: none;
-//   padding: 10px 30px;
-//   border-radius: 5px;
-//   margin: 40px 0 30px 180px;
-//   font-size: 15px;
-// }
-// input[type="submit"]:hover {
-//   background: $blue;
-// }
-.iconeye {
-  display: inline-block;
-}
-#eye {
-  display: block;
+.input-box-email label {
   position: relative;
-  top: -18px;
-  width: 27px;
-  cursor: pointer;
+  font-family: roboto;
+  color: $light_grey;
+  font-size: 28px;
+  pointer-events: none;
+  left: -285px;
+  top: -47px;
+  transition: 0.2s all;
 }
-// .side-image {
-//   display: inline-block;
-//   position: relative;
-//   top: -20px;
-//   left: 240px;
-//   transform: translate(50%, 50%);
-// }
-// .side-logo {
-//   width: 210px;
-// }
+
+.input-box-email input:focus ~ label,
+.input-box-email input:valid ~ label {
+  top: -75px;
+  left: -280px;
+  background: $white;
+  padding: 0 5px;
+  font-size: 25px;
+  color: $blue;
+}
+
+.input-box-password label {
+  position: relative;
+  font-family: roboto;
+  color: $light_grey;
+  font-size: 28px;
+  pointer-events: none;
+  left: -105px;
+  top: -41px;
+  transition: 0.2s all;
+}
+
+.input-box-password input:focus ~ label,
+.input-box-password input:valid ~ label {
+  top: -68px;
+  left: -105px;
+  background: $white;
+  padding: 0 5px;
+  font-size: 25px;
+  color: $blue;
+}

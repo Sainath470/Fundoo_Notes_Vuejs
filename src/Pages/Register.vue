@@ -2,42 +2,48 @@
   <div class="container">
     <div class="title">
       <h2><Title /></h2>
-      <h3>Create your Google Account</h3>
+      <h3>Create your Fundoo Account</h3>
     </div>
     <form>
       <div class="user-details">
         <div class="input-box">
           <input type="name" required />
-          <label class="details">First name</label>
+          <label>First Name</label>
         </div>
         <div class="input-box">
           <input type="name" required />
-          <label class="details">Last name</label>
+          <label>Last name</label>
         </div>
         <div class="input-box-email">
           <input type="username" required />
-          <label class="details-email">Username</label>
-          <span class="span-email">@gmail.com</span>
+          <label>Username</label>
         </div>
+        <label class="a-email">@gmail.com</label>
         <a class="a-tag-1">You can use letters, numbers & periods</a>
         <a href="" class="a-tag-2">Use my current email address instead</a>
-        <div class="input-box">
+        <div class="input-box-password">
           <input type="password" class="password" id="pass1" required />
-          <label class="details">Password</label>
+          <label>Password</label>
         </div>
-        <div class="input-box">
+        <div class="input-box-password">
           <input type="password" class="password" id="pass2" required />
-          <label class="details">Confirm</label>
+          <label>Confirm</label>
         </div>
         <div class="iconeye">
-          <img src="../assets/eyelogo.png"  id="eye" />
+          <img
+            src="../assets/eyehide.png"
+            id="eye"
+            @click="passwordToggleButton()"
+          />
         </div>
-        <a class="a-tag-3">Use 8 or more characters with a mix of letters, numbers & symbols</a>
-        <a href="" class="a-tag-3">Sign in instead</a>
-        <input type="submit" value="Next" />
+        <a class="a-tag-3"
+          >Use 8 or more characters with a mix of letters, numbers & symbols</a
+        >
+        <a href="" class="a-tag-4">Sign in instead</a>
+        <input class="Next-btn" type="submit" value="Next" />
       </div>
     </form>
-    <div class="input-box">
+    <div class="google-side-image">
       <img src="../assets/googlesidelogo.png" alt="" class="side-logo" />
     </div>
   </div>
