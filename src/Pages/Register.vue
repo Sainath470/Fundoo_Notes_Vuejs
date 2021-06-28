@@ -7,39 +7,58 @@
     <form>
       <div class="user-details">
         <div class="input-box">
-          <input type="name" required />
+          <input type="name" required pattern="[A-Za-z]{3,10}" />
           <label>First Name</label>
         </div>
         <div class="input-box">
-          <input type="name" required />
+          <input type="name" required pattern="[A-Za-z]{3,10}" />
           <label>Last name</label>
         </div>
         <div class="input-box-email">
-          <input type="username" required />
+          <input
+            type="username"
+            required
+            pattern="^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])?"
+          />
           <label>Username</label>
         </div>
         <label class="a-email">@gmail.com</label>
         <a class="a-tag-1">You can use letters, numbers & periods</a>
-        <a href="" class="a-tag-2">Use my current email address instead</a>
+        <a class="a-tag-2">Use my current email address instead</a>
         <div class="input-box-password">
-          <input type="password" class="password" id="pass1" required />
+          <input
+            :type="password_type"
+            class="password"
+            required
+          />
           <label>Password</label>
         </div>
         <div class="input-box-password">
-          <input type="password" class="password" id="pass2" required />
+          <input
+            :type="password_type"
+            class="password"
+            required
+          />
           <label>Confirm</label>
         </div>
         <div class="iconeye">
           <img
+            src="../assets/eyeshow.png"
+            @click="togglePassword()"
+            class="show-eye"
+            id="eye-1"
+          />
+          <img
             src="../assets/eyehide.png"
-            id="eye"
-            @click="passwordToggleButton()"
+            @click="togglePassword()"
+            class="hide-eye"
+            id="eye-2"
           />
         </div>
         <a class="a-tag-3"
           >Use 8 or more characters with a mix of letters, numbers & symbols</a
         >
-        <a href="" class="a-tag-4">Sign in instead</a>
+        <a class="a-tag-4">Sign in instead</a>
         <input class="Next-btn" type="submit" value="Next" />
       </div>
     </form>
@@ -55,6 +74,27 @@ export default {
   name: "Register",
   components: {
     Title,
+  },
+  data() {
+    return {
+      password_type: "password",
+    };
+  },
+  methods: {
+    togglePassword() {
+      var showEye = document.getElementById("eye-1");
+      var hideEye = document.getElementById("eye-2");
+
+      if (this.password_type === "password") {
+        this.password_type = "text";
+        showEye.style.display = "block";
+        hideEye.style.display = "none";
+      } else {
+        this.password_type = "password";
+        showEye.style.display = "none";
+        hideEye.style.display = "block";
+      }
+    }
   },
 };
 </script>
