@@ -1,0 +1,68 @@
+@import 'colors';
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: $white;
+  border: 1px solid $light_red;
+  border-radius: 13px;
+}
+
+.container h1{
+  text-align: center;
+  color: $blue;
+}
+
+
+.text-field{
+  margin: 20px;
+  outline: none;
+}
+
+.text-field input{
+  width: 350px;
+  height: 35px;
+  font-size: 15px;
+  padding: 0px 15px;
+  border:solid 1px $light_red;
+  border-width: 1px;
+	border-radius: 50px;
+  outline: none;
+}
+
+.btn-sign-in{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  width: 100px;
+  height: 35px;
+  background-color : $blue;
+  color: $white;
+  font-size: 16px;
+  border: none;
+  
+}
+
+.signup-link {
+  margin-bottom: 15px;
+}
+
+.signup-link a{
+  text-decoration: none;
+  color: $blue;
+}
+
+.forgot-password {
+  margin: 20px 0 20px 5px;
+  color: $blue;
+}
+
+.forgot-password a{
+  margin: 20px 0 20px 5px;
+  color: $blue;
+  text-decoration: none;
+}
+
