@@ -7,7 +7,7 @@
 
 body {
   display: flex;
-  height: -80vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   background: $white;
@@ -63,7 +63,7 @@ body {
   width: 340px;
   border-radius: 6px;
   border-width: 1px;
-  border-color: rgba(72, 78, 78, 0.431);
+  border-color: $grey_shadow;
   margin-left: 1px;
   outline: none;
   position: relative;
@@ -78,7 +78,7 @@ body {
   width: 340px;
   border-radius: 6px;
   border-width: 1px;
-  border-color: rgba(72, 78, 78, 0.431);
+  border-color: $grey_shadow;
   margin-left: 1px;
   outline: none;
   position: relative;
@@ -90,7 +90,7 @@ body {
   height: 60px;
   border-radius: 5px;
   border-width: 0.1px;
-  border-color: rgb(209, 193, 193);
+  border-color:$grey_shadow;
 }
 
 .input-box-email input {

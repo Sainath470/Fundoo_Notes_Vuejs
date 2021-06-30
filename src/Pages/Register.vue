@@ -4,7 +4,7 @@
       <h2><Title /></h2>
       <h3>Create your Fundoo Account</h3>
     </div>
-    <form @submit.prevent="">
+    <form @submit.prevent="handleSubmit()">
       <div class="user-details">
         <div class="input-box">
           <input type="firstName"  v-model="firstName" required pattern="[A-Za-z]{3,10}" />
@@ -27,11 +27,11 @@
         <a class="a-tag-1">You can use letters, numbers & periods</a>
         <a class="a-tag-2">Use my current email address instead</a>
         <div class="input-box-password">
-          <input :type="password_type" class="password" v-model="password" required/>
+          <input :type="password_type" class="password" v-model="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"  required/>
           <label>Password</label>
         </div>
         <div class="input-box-password">
-          <input :type="password_type" class="password" v-model="password_confirmation" required />
+          <input :type="password_type" class="password" v-model="password_confirmation" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"  required />
           <label>Confirm</label>
         </div>
         <div class="iconeye">
@@ -48,15 +48,16 @@
             id="eye-2"
           />
         </div>
+
         <a class="a-tag-3"
           >Use 8 or more characters with a mix of letters, numbers & symbols</a
         >
-        <a class="a-tag-4">Sign in instead</a>
+        <a href="http://localhost:8080/login" class="a-tag-4">Sign in instead</a>
         <input class="Next-btn" type="submit" @click="handleSubmit();"  value="Next" />
       </div>
     </form>
     <div class="google-side-image">
-      <img src="../assets/googlesidelogo.png" alt="" class="side-logo" />
+      <img src="../assets/sidelogo.png" alt="" class="side-logo" />
     </div>
   </div>
 </template>
@@ -85,21 +86,9 @@ export default {
   },
   methods: {
     togglePassword() {
-      var showEye = document.getElementById("eye-1");
-      var hideEye = document.getElementById("eye-2");
-
-      if (this.password_type === "password") {
-        this.password_type = "text";
-        showEye.style.display = "block";
-        hideEye.style.display = "none";
-      } else {
-        this.password_type = "password";
-        showEye.style.display = "none";
-        hideEye.style.display = "block";
-      }
+        this.password_type = this.password_type === 'password' ? 'text' : 'password'
     },
      async handleSubmit() {
-
         let userData = {
                 firstName: this.firstName,
                 lastName: this.lastName,
