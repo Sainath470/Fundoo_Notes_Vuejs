@@ -53,7 +53,6 @@ export default {
         .userLogin(userData)
         .then((response) => {
           alert("Log in successfull");
-          localStorage.setItem('token', response.data.token);
           return response;
         }).catch((error) => {
           alert("Please enter the valid credentials");

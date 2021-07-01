@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="">
+    <form>
       <div class="container">
         <h2><Title /></h2>
         <h3>Create your Google Account</h3>
@@ -103,15 +103,20 @@ export default {
         password_confirmation: this.password_confirmation,
       };
       service.userRegister(userData).then((response) => {
+        if(this.userData == null){
+          alert("Please enter the details");
+          return;
+        }
         if (this.password != this.password_confirmation) {
           alert("Password not matching!");
-          return response;
+          return;
         } 
         if (this.firstName == this.lastName) {
           alert("first name and last name should not be same!");
-          return response;
+          return;
         } else {
           alert("Successfully registered...!");
+          this.push('/login');
           return response;
         }
       });

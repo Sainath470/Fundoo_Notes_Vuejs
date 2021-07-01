@@ -10,5 +10,8 @@ export default {
     },
     userForgotPassword(data) {
         return axios.postData("/auth/forgotPassword", data)
+    },
+    userResetPassword(data) {
+        return axios.postData("/auth/resetPassword", data)
     }
 }

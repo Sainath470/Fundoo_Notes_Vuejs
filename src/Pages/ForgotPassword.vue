@@ -1,7 +1,8 @@
 <template>
-  <div class="box">
+  <div class="container">
     <div class="inner-box">
-      <form @submit.prevent="handlesubmit">
+      <form>
+      <div>
         <h3>Forgot Password</h3>
         <input
           type="email"
@@ -9,8 +10,9 @@
           placeholder="Email Address"
           pattern="^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])?@gmail.com"
         />
-        <button type="submit" class="btn btn-primary btn-block">
-          send Recovery link
+      </div>
+        <button type="submit" class="btn-link" @click="handleSubmit();">
+          Send Reset Link
         </button>
       </form>
     </div>
@@ -38,6 +40,8 @@ export default {
           localStorage.getItem("data", response.data.email);
           console.log("forgot password", response);
           alert("reset link sent successfully");
+          this.$router.push("/resetPassword");
+          return response;
         })
         .catch((error) => {
           alert("Email is not registered");
