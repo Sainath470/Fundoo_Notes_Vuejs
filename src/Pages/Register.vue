@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <form @submit.prevent="">
       <div class="container">
         <h2><Title /></h2>
         <h3>Create your Google Account</h3>
@@ -94,6 +94,13 @@ export default {
       this.password_type =
         this.password_type === "password" ? "text" : "password";
     },
+    clearForm() {
+      this.firstName = null;
+      this.lastName = null;
+      this.email = null;
+      this.password = null;
+      this.password_confirmation = null;
+    },
     handleSubmit() {
       let userData = {
         firstName: this.firstName,
@@ -103,20 +110,19 @@ export default {
         password_confirmation: this.password_confirmation,
       };
       service.userRegister(userData).then((response) => {
-        if(this.userData == null){
-          alert("Please enter the details");
-          return;
+        if (response.data.status == 201) {
+          alert("This email already exist");
+          this.clearForm();
+          return response;
         }
-        if (this.password != this.password_confirmation) {
-          alert("Password not matching!");
-          return;
-        } 
-        if (this.firstName == this.lastName) {
-          alert("first name and last name should not be same!");
-          return;
-        } else {
+        if (response.data.status == 403) {
+          alert("Password doesn't match");
+          this.clearForm();
+          return response;
+        }
+        if (response.data.status == 200) {
           alert("Successfully registered...!");
-          this.push('/login');
+          this.$router.push("/login");
           return response;
         }
       });

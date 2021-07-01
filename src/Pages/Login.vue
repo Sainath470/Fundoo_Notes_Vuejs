@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Login</h1>
-    <form @submit.prevent = "">
+    <form @submit.prevent="">
       <div class="text-field">
         <input
           type="text"
@@ -20,7 +20,9 @@
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
         />
       </div>
-      <button class="btn-sign-in" @click="handleSubmit()" type="submit">Sign in</button>
+      <button class="btn-sign-in" @click="handleSubmit()" type="submit">
+        Sign in
+      </button>
       <div class="signup-link">
         <a href="/register">Create account</a>
       </div>
@@ -44,6 +46,10 @@ export default {
     };
   },
   methods: {
+    clearForm() {
+      this.email = null;
+      this.password = null;
+    },
     handleSubmit() {
       let userData = {
         email: this.email,
@@ -52,10 +58,25 @@ export default {
       service
         .userLogin(userData)
         .then((response) => {
-          alert("Log in successfull");
-          return response;
-        }).catch((error) => {
-          alert("Please enter the valid credentials");
+          console.log("Log in successfull", response);
+          if (response.data.status == 400) {
+            alert("Invalid credentials/ Email doesn't exists");
+            this.clearForm();
+            return response;
+          }
+          if (response.data.status == 401) {
+            alert("Unauthorized");
+            this.clearForm();
+            return response;
+          }
+          if (response.data.status == 200) {
+            alert("Successfully Logged in");
+            localStorage.setItem('token', response.data.access_token);
+            console.log('token:', response.data.access_token);
+            return response;
+          }
+        })
+        .catch((error) => {
           return error;
         });
     },
