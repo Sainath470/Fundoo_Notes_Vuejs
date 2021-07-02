@@ -5,7 +5,7 @@
       <div class="reset-form">
         <input
           type="password"
-          v-model="password"
+          v-model="new_password"
           placeholder="new password"
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
         />
@@ -13,7 +13,7 @@
       <div class="reset-form">
         <input
           type="password"
-          v-model="password_confirmation"
+          v-model="confirm_password"
           placeholder="confirm password"
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
         />
@@ -32,21 +32,23 @@ export default {
   },
   data() {
     return {
-      password: "",
-      password_confirmation: "",
+      new_password: "",
+      confirm_password: "",
     };
   },
   methods: {
     handleSubmit() {
       let userData = {
-        password: this.password,
-        password_confirmation: this.password_confirmation,
+        new_password: this.new_password,
+        confirm_password: this.confirm_password,
+        token: this.$route.params.token
       };
-      service.userRegister(userData).then((response) => {
-        if(response.data.status == 201){
+      service.userResetPassword(userData).then((response) => {
+        console.log(response.data.token);
+        if(response.data.status == 401){
           alert("Reset token has been expired");
         }
-        if(response.data.status == 200){
+        if(response.data.status == 201){
         alert("Password reset successfull..!");
         this.$router.push('/login');
         return response;

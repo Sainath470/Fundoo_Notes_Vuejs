@@ -71,8 +71,7 @@ export default {
           }
           if (response.data.status == 200) {
             alert("Successfully Logged in");
-            localStorage.setItem('token', response.data.access_token);
-            console.log('token:', response.data.access_token);
+            localStorage.setItem("token", response.data.access_token);
             return response;
           }
         })

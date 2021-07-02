@@ -110,7 +110,7 @@ export default {
         password_confirmation: this.password_confirmation,
       };
       service.userRegister(userData).then((response) => {
-        if (response.data.status == 201) {
+        if (response.data.status == 409) {
           alert("This email already exist");
           this.clearForm();
           return response;
@@ -120,7 +120,7 @@ export default {
           this.clearForm();
           return response;
         }
-        if (response.data.status == 200) {
+        if (response.data.status == 201) {
           alert("Successfully registered...!");
           this.$router.push("/login");
           return response;

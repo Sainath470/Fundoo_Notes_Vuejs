@@ -11,6 +11,11 @@ export default new Router({
     mode: 'history',
     routes: [
         {
+            path: '/',
+            name: 'Register',
+            component: Register
+        },
+        {
             path: '/register',
             name: 'Register',
             component: Register
@@ -26,7 +31,7 @@ export default new Router({
             component: ForgotPassword
         },
         {
-            path: '/resetPassword',
+            path: '/resetPassword/:token',
             name: 'ResetPassword',
             component: ResetPassword
 
