@@ -42,14 +42,15 @@ export default {
         .userForgotPassword(userData)
         .then((response) => {
           if (response.data.status == 401) {
-            this.clearForm();
             alert("Email is not registered");
+            this.clearForm();
             return response;
           }
           if (response.data.status == 200) {
             localStorage.getItem("data", response.data.email);
-            this.clearForm();
+            console.log("forgot password", response);
             alert("reset link sent successfully");
+            this.clearForm();
             return response;
           }
         })

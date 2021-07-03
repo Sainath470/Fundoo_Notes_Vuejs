@@ -111,17 +111,16 @@ export default {
       };
       service.userRegister(userData).then((response) => {
         if (response.data.status == 409) {
-          this.clearForm();
           alert("This email already exist");
+          this.clearForm();
           return response;
         }
         if (response.data.status == 403) {
-          this.clearForm();
           alert("Password doesn't match");
+          this.clearForm();
           return response;
         }
         if (response.data.status == 201) {
-          this.clearForm();
           alert("Successfully registered...!");
           this.$router.push("/login");
           return response;
