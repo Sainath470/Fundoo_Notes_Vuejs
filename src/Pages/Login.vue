@@ -58,20 +58,20 @@ export default {
       service
         .userLogin(userData)
         .then((response) => {
-          console.log("Log in successfull", response);
           if (response.data.status == 400) {
-            alert("Invalid credentials/ Email doesn't exists");
             this.clearForm();
+            alert("Invalid credentials/ Email doesn't exists");
             return response;
           }
           if (response.data.status == 401) {
-            alert("Unauthorized");
             this.clearForm();
+            alert("Unauthorized");
             return response;
           }
           if (response.data.status == 200) {
-            alert("Successfully Logged in");
             localStorage.setItem("token", response.data.access_token);
+            this.clearForm();
+            alert("Successfully Logged in");
             return response;
           }
         })

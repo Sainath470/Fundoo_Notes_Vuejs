@@ -36,6 +36,10 @@ export default {
       confirm_password: "",
     };
   },
+  clearForm(){
+    this.new_password = null;
+    this.confirm_password = null;
+  },
   methods: {
     handleSubmit() {
       let userData = {
@@ -44,11 +48,12 @@ export default {
         token: this.$route.params.token
       };
       service.userResetPassword(userData).then((response) => {
-        console.log(response.data.token);
         if(response.data.status == 401){
+          this.clearForm();
           alert("Reset token has been expired");
         }
         if(response.data.status == 201){
+        this.clearForm();
         alert("Password reset successfull..!");
         this.$router.push('/login');
         return response;
