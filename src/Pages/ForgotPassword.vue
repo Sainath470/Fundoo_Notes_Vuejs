@@ -38,19 +38,18 @@ export default {
       let userData = {
         email: this.email,
       };
+      this.clearForm();
       service
         .userForgotPassword(userData)
         .then((response) => {
           if (response.data.status == 401) {
             alert("Email is not registered");
-            this.clearForm();
             return response;
           }
           if (response.data.status == 200) {
             localStorage.getItem("data", response.data.email);
             console.log("forgot password", response);
             alert("reset link sent successfully");
-            this.clearForm();
             return response;
           }
         })

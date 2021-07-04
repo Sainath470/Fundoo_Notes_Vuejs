@@ -55,18 +55,17 @@ export default {
         email: this.email,
         password: this.password,
       };
+      this.clearForm();
       service
         .userLogin(userData)
         .then((response) => {
           console.log("Log in successfull", response);
           if (response.data.status == 400) {
             alert("Invalid credentials/ Email doesn't exists");
-            this.clearForm();
             return response;
           }
           if (response.data.status == 401) {
             alert("Unauthorized");
-            this.clearForm();
             return response;
           }
           if (response.data.status == 200) {

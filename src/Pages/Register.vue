@@ -3,15 +3,15 @@
     <form @submit.prevent="">
       <div class="container">
         <h2><Title /></h2>
-        <h3>Create your Google Account</h3>
+        <h3>Create your Fundoo Account</h3>
       </div>
       <div class="user-details">
         <div class="input-box">
-          <input type="name" v-model="firstName" required />
+          <input type="name" v-model="firstName" required pattern="[A-Za-z]{3,12}"/>
           <label>First name</label>
         </div>
         <div class="input-box">
-          <input type="name" v-model="lastName" required />
+          <input type="name" v-model="lastName" required pattern="[A-Za-z]{3,12}"/>
           <label>Last name</label>
         </div>
         <div class="user-name">
@@ -109,15 +109,14 @@ export default {
         password: this.password,
         password_confirmation: this.password_confirmation,
       };
+      this.clearForm();
       service.userRegister(userData).then((response) => {
         if (response.data.status == 409) {
           alert("This email already exist");
-          this.clearForm();
           return response;
         }
         if (response.data.status == 403) {
           alert("Password doesn't match");
-          this.clearForm();
           return response;
         }
         if (response.data.status == 201) {
