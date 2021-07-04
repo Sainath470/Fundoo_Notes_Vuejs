@@ -5,6 +5,7 @@
         <div>
           <h3>Forgot Password</h3>
           <input
+            class = "input-box-email"
             type="email"
             v-model="email"
             placeholder="Email Address"

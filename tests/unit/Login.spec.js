@@ -1,7 +1,7 @@
 /***********************************************************************************
  * Purpose : To test Login component
  * 
- * @file : Register.spec.js
+ * @file : Login.spec.js
  * @author : Venkata Sainath <akulavenkatasainath1997@gmail.com>
  * @version : 1.0
  * @since : 7/04/2021
@@ -35,5 +35,4 @@ describe('Login.vue', () => {
     it('it has a link to go to the forgot password page', () => {
         expect(wrapper.contains('.forgot-password')).toBe(true);
     });
-
 })

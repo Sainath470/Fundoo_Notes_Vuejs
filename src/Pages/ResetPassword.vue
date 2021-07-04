@@ -4,6 +4,7 @@
       <h3>Reset Password</h3>
       <div class="reset-form">
         <input
+          class = "input-box-password"
           type="password"
           v-model="new_password"
           placeholder="new password"
@@ -12,6 +13,7 @@
       </div>
       <div class="reset-form">
         <input
+          class = "input-box-confirm"
           type="password"
           v-model="confirm_password"
           placeholder="confirm password"
