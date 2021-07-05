@@ -72,7 +72,6 @@
 <script>
 import Title from "./Title.vue";
 import service from "../Services/User";
-
 export default {
   name: "Register",
   components: {

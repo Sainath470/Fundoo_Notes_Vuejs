@@ -20,6 +20,7 @@
   </div>
 </template>
 
+
 <script>
 import service from "../Services/User";
 
@@ -49,7 +50,6 @@ export default {
           }
           if (response.data.status == 200) {
             localStorage.getItem("data", response.data.email);
-            console.log("forgot password", response);
             alert("reset link sent successfully");
             return response;
           }

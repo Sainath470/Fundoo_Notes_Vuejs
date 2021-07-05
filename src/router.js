@@ -4,6 +4,7 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import ForgotPassword from './Pages/ForgotPassword'
 import ResetPassword from './Pages/ResetPassword'
+import DashBoard from './components/Dashboard'
 
 Vue.use(Router)
 
@@ -12,11 +13,6 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Register',
-            component: Register
-        },
-        {
-            path: '/register',
             name: 'Register',
             component: Register
         },
@@ -34,7 +30,11 @@ export default new Router({
             path: '/resetPassword/:token',
             name: 'ResetPassword',
             component: ResetPassword
-
+        },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: DashBoard
         }
     ]
 })
