@@ -1,60 +1,81 @@
 <template>
-  <header class="flex-container">
-    <nav class="items">
-      <button class="navbar-button">
-        <menu-icon />
-      </button>
-    </nav>
-    <div class="items flex-container">
-      <img
-        alt=""
-        src="../assets/googlekeeplogo.png"
-        style="width: 40px; height: 40px"
-      />
-      <h1 class="title">FundooNotes</h1>
-    </div>
+  <div>
+    <header class="flex-container">
+      <nav class="items">
+        <button class="navbar-button">
+          <menu-icon />
+        </button>
+      </nav>
+      <div class="items flex-container">
+        <img
+          alt="google-logo"
+          src="../assets/googlekeeplogo.png"
+          style="width: 40px; height: 40px"
+        />
+        <h1 class="title">FundooNotes</h1>
+      </div>
 
-    <div class="options items flex-container">
-      <div class="search">
-        <button class="icons-header">
-          <i class="material-icons"><SelectSearchIcon /></i>
-        </button>
-        <input type="text" class="text-search" placeholder="Search" />
+      <div class="options items flex-container">
+        <div class="search">
+          <button class="icons-header">
+            <i class="material-icons"><SelectSearchIcon /></i>
+          </button>
+          <input type="text" class="text-search" placeholder="Search" />
+        </div>
+        <div>
+          <button class="icons-header">
+            <i class="material-icons"><ProfileIcon /></i>
+          </button>
+        </div>
       </div>
-      <div>
-        <button class="icons-header">
-          <i class="material-icons"><RefreshIcon /></i>
-        </button>
-      </div>
-      <div>
-        <button class="icons-header view_list">
-          <i class="material-icons"><ViewListIcon /></i>
-        </button>
-      </div>
-      <div>
-        <button class="icons-header">
-          <i class="material-icons"><settingsIcon /></i>
-        </button>
-      </div>
-    </div>
-  </header>
+    </header>
+    <aside>
+      <ul class="side-bar"></ul>
+      <li>
+        <i class="material-icons"><LightBulbIcon /></i>
+        <a href="#">Notes</a>
+      </li>
+      <li>
+        <i class="material-icons"><bellIcon /></i>
+        <a href="#">Reminders</a>
+      </li>
+      <li>
+        <i class="material-icons"><EditLabelIcon /></i>
+        <a href="#">Edit labels</a>
+      </li>
+      <li>
+        <i class="material-icons"><ArchiveIcon /></i>
+        <a href="#">Archive</a>
+      </li>
+      <li>
+        <i class="material-icons"><TrashIcon /></i>
+        <a href="#">Trash</a>
+      </li>
+    </aside>
+  </div>
 </template>
 
 <script>
 import MenuIcon from "vue-material-design-icons/Menu.vue";
 import SelectSearchIcon from "vue-material-design-icons/SearchWeb.vue";
-import RefreshIcon from "vue-material-design-icons/Refresh.vue";
-import ViewListIcon from "vue-material-design-icons/ViewList.vue";
-import settingsIcon from "vue-material-design-icons/Nut.vue";
+import ProfileIcon from "vue-material-design-icons/AccountCircle.vue";
+import LightBulbIcon from "vue-material-design-icons/Lightbulb.vue";
+import bellIcon from "vue-material-design-icons/BellAlertOutline.vue";
+import EditLabelIcon from "vue-material-design-icons/Pen";
+import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDown.vue";
+import TrashIcon from "vue-material-design-icons/TrashCan.vue";
 
 export default {
   name: "DashBoard",
   components: {
     MenuIcon,
     SelectSearchIcon,
-    RefreshIcon,
-    ViewListIcon,
-    settingsIcon,
+    ProfileIcon,
+    LightBulbIcon,
+    bellIcon,
+    EditLabelIcon,
+    ArchiveIcon,
+    TrashIcon,
   },
 };
 </script>
