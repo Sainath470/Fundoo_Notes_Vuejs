@@ -2,15 +2,19 @@
   <div>
     <header class="flex-container">
       <nav class="items">
-        <button class="navbar-button">
+        <button
+          class="navbar-button"
+          @click="sideBarHidden"
+          @dblclick="sideBarShown"
+        >
           <menu-icon />
         </button>
       </nav>
       <div class="items flex-container">
         <img
+          class="img-keep"
           alt="google-logo"
           src="../assets/googlekeeplogo.png"
-          style="width: 40px; height: 40px"
         />
         <h1 class="title">FundooNotes</h1>
       </div>
@@ -29,29 +33,29 @@
         </div>
       </div>
     </header>
-    <aside>
-      <ul class="side-bar"></ul>
+    <aside class="sidebar" id="sidebar">
       <li>
         <i class="material-icons"><LightBulbIcon /></i>
-        <a href="#">Notes</a>
+        <a href="#"><span id="A">Notes</span></a>
       </li>
       <li>
         <i class="material-icons"><bellIcon /></i>
-        <a href="#">Reminders</a>
+        <a href="#"><span id="B">Reminders</span></a>
       </li>
       <li>
         <i class="material-icons"><EditLabelIcon /></i>
-        <a href="#">Edit labels</a>
+        <a href="#"><span id="C">Edit labels</span></a>
       </li>
       <li>
         <i class="material-icons"><ArchiveIcon /></i>
-        <a href="#">Archive</a>
+        <a href="#"><span id="D">Archive</span></a>
       </li>
       <li>
         <i class="material-icons"><TrashIcon /></i>
-        <a href="#">Trash</a>
+        <a href="#"><span id="E">Trash</span></a>
       </li>
     </aside>
+    <CreateNotes />
   </div>
 </template>
 
@@ -64,6 +68,7 @@ import bellIcon from "vue-material-design-icons/BellAlertOutline.vue";
 import EditLabelIcon from "vue-material-design-icons/Pen";
 import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDown.vue";
 import TrashIcon from "vue-material-design-icons/TrashCan.vue";
+import CreateNotes from "./CreateNotes.vue";
 
 export default {
   name: "DashBoard",
@@ -76,6 +81,23 @@ export default {
     EditLabelIcon,
     ArchiveIcon,
     TrashIcon,
+    CreateNotes,
+  },
+  methods: {
+    sideBarHidden() {
+      document.getElementById("A").style.display = "none";
+      document.getElementById("B").style.display = "none";
+      document.getElementById("C").style.display = "none";
+      document.getElementById("D").style.display = "none";
+      document.getElementById("E").style.display = "none";
+    },
+    sideBarShown() {
+      document.getElementById("A").style.display = "block";
+      document.getElementById("B").style.display = "block";
+      document.getElementById("C").style.display = "block";
+      document.getElementById("D").style.display = "block";
+      document.getElementById("E").style.display = "block";
+    },
   },
 };
 </script>

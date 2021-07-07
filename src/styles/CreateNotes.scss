@@ -1,0 +1,77 @@
+@import "colors";
+
+.container .input-box input{
+    width: 380px;
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 30px;
+    border-radius: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    background: $dull_white;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px $box_shadow;
+}
+
+
+.first-image {
+    opacity: 0.5;
+    font-size: 20px;
+    margin-left: -90px;
+}
+
+.second-image {
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+.third-image {
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+.createNote{
+    padding-top: 12px;
+}
+
+.create-notes{
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+    margin: 12px auto;
+    margin-right: 260px;
+    background: $dull_white;
+    padding: 15px;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px $box_shadow;
+}
+
+.create-notes input {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 18px;
+}
+
+button{
+    margin-left: 340px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: white;
+}
