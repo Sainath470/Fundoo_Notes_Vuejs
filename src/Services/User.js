@@ -13,5 +13,8 @@ export default {
     },
     userResetPassword(data) {
         return axios.postData("/auth/resetPassword", data)
+    },
+    userCreateNote(data) {
+        return axios.postData("/auth/createNote", data)
     }
 }

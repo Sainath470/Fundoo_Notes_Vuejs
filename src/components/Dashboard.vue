@@ -2,11 +2,7 @@
   <div>
     <header class="flex-container">
       <nav class="items">
-        <button
-          class="navbar-button"
-          @click="sideBarHidden"
-          @dblclick="sideBarShown"
-        >
+        <button class="navbar-button">
           <menu-icon />
         </button>
       </nav>
@@ -71,7 +67,7 @@ import TrashIcon from "vue-material-design-icons/TrashCan.vue";
 import CreateNotes from "./CreateNotes.vue";
 
 export default {
-  name: "DashBoard",
+  name: "Dashboard",
   components: {
     MenuIcon,
     SelectSearchIcon,
@@ -83,22 +79,10 @@ export default {
     TrashIcon,
     CreateNotes,
   },
-  methods: {
-    sideBarHidden() {
-      document.getElementById("A").style.display = "none";
-      document.getElementById("B").style.display = "none";
-      document.getElementById("C").style.display = "none";
-      document.getElementById("D").style.display = "none";
-      document.getElementById("E").style.display = "none";
-    },
-    sideBarShown() {
-      document.getElementById("A").style.display = "block";
-      document.getElementById("B").style.display = "block";
-      document.getElementById("C").style.display = "block";
-      document.getElementById("D").style.display = "block";
-      document.getElementById("E").style.display = "block";
-    },
+  data() {
+    return {};
   },
+  methods: {},
 };
 </script>
 

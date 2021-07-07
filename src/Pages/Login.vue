@@ -59,7 +59,6 @@ export default {
       service
         .userLogin(userData)
         .then((response) => {
-          console.log("Log in successfull", response);
           if (response.data.status == 400) {
             alert("Invalid credentials/ Email doesn't exists");
             return response;
@@ -70,7 +69,8 @@ export default {
           }
           if (response.data.status == 200) {
             alert("Successfully Logged in");
-            localStorage.setItem("token", response.data.access_token);
+            localStorage.setItem("token", response.data.token);
+            this.$router.push("/dashboard");
             return response;
           }
         })
@@ -83,5 +83,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '../styles/Login.scss';
+@import '../styles/Login.scss'
 </style>

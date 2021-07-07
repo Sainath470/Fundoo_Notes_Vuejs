@@ -1,8 +1,8 @@
 @import "colors";
 
 .container .input-box input{
-    width: 380px;
-    margin-top: 50px;
+    width: 450px;
+    margin-top: 70px;
     margin-left: 200px;
     height: 30px;
     border-radius: 1px;
@@ -16,11 +16,25 @@
     box-shadow: 0 3px 5px $box_shadow;
 }
 
+.icons{
+    margin-top: -28px;
+    margin-left: 350px;   
+    cursor: pointer;  
+}
+
+i{
+    margin-left: 40px;
+}
+
+i:hover{
+    color: initial;
+    background-color: #ddd7d7;
+    border-radius: 50%;
+}
 
 .first-image {
     opacity: 0.5;
     font-size: 20px;
-    margin-left: -90px;
 }
 
 .second-image {
@@ -41,8 +55,8 @@
     position: relative;
     width: 400px;
     max-width: 100%;
-    margin: 12px auto;
-    margin-right: 260px;
+    margin-top: 60px;
+    margin-left: 260px;
     background: $dull_white;
     padding: 15px;
     border-radius: 2px;
@@ -73,5 +87,108 @@ button{
     font-weight: 500;
     cursor: pointer;
     font-size: 15px;
-    background-color: white;
+    background-color: $white;
+}
+@media (min-width: 600px) {
+
+body {
+grid-template-columns: 280px 1fr;
+grid-template-areas: 
+    "h h"
+    "a m";
+}
+
+.search {
+display: flex;
+align-items: center;
+flex-grow: 1;
+border: 1px solid rgb(231, 221, 221);
+border-radius: 10px;
+background-color:#ffff;
+background-color:white;
+border: 1px solid black;
+height: 32px;
+}
+
+/* header */
+.text-search {
+display: block;
+border: none;
+background-color: transparent;
+outline: none;
+}
+
+.text-search::placeholder {
+color: #80868b;
+color: #919faa;
+font-family: 'Roboto';
+}
+
+.createNote{
+    padding-top: 12px;
+    padding-left: 200px;
+}
+
+.create-notes{
+    position: relative;
+    width: 432px;
+    max-width: 100%;
+    margin-top: 60px;
+    margin-left: 260px;
+    background: $dull_white;
+    padding: 15px;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px $box_shadow;
+}
+
+.create-notes input {
+    width: 500px;
+    max-width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 18px;
+}
+
+button{
+    margin-left: 360px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: $white;
+}
+
+.first-image {
+    opacity: 0.5;
+    font-size: 20px;
+    margin-left: 90px;
+}
+
+.second-image {
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+.third-image {
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+
+.view_list{
+/* aside */
+aside {
+display: block;
+}
+}
 }
