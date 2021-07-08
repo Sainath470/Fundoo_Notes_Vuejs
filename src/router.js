@@ -4,8 +4,9 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import ForgotPassword from './Pages/ForgotPassword'
 import ResetPassword from './Pages/ResetPassword'
-import DashBoard from './components/Dashboard'
+import Dashboard from './components/Dashboard'
 import CreateNotes from './components/CreateNotes'
+import GetNotes from './components/GetNotes'
 
 Vue.use(Router)
 
@@ -35,10 +36,16 @@ export default new Router({
         {
             path: '/dashboard',
             name: 'Dashboard',
-            component: DashBoard,
+            component: Dashboard,
             children: [{
                 path: '/createNotes',
+                name: CreateNotes,
                 component: CreateNotes
+            },
+            {
+                path: '/getNotes',
+                name: GetNotes,
+                component: GetNotes
             }]
         }
     ]

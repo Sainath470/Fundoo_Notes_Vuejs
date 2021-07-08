@@ -11,4 +11,12 @@ export default class AxiosService {
             return error;
         })
     }
+    getData(url) {
+        return axios.get(url).then(response => {
+            localStorage.getItem('token', response.data.token);
+            return response;
+        }).catch(error => {
+            return error;
+        })
+    }
 }

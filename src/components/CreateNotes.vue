@@ -23,7 +23,11 @@
           placeholder="Take a note . ."
         ></textarea>
         <div>
-          <button type="submit" v-on:click="changeState() && handleSubmit()">
+          <button
+            type="submit"
+            @click="changeState()"
+            v-on:click="handleSubmit()"
+          >
             Close
           </button>
         </div>
@@ -39,7 +43,7 @@ import CheckboxIcon from "vue-material-design-icons/CheckBoxOutline.vue";
 import service from "../Services/User";
 
 export default {
-  name: "createNote",
+  name: "createNotes",
   components: {
     paintBurshIcon,
     ImageIcon,
@@ -66,18 +70,18 @@ export default {
         title: this.title,
         description: this.description,
       };
-      service
-        .userCreateNote(userData)
-        .then((response) => {
-          console.log("Notes", response);
+      this.clearForm();
+      service.userCreateNote(userData).then((response) => {
+        if (response.data.status == 201) {
           localStorage.getItem("token", response.data.token);
           alert("Note created successfully");
           return response;
-        })
-        .catch((error) => {
-          alert("Empty notes not accepted..");
-          return error;
-        });
+        }
+        if (response.data.status == 403) {
+          alert("Token is invalid");
+          return response;
+        }
+      });
     },
   },
 };

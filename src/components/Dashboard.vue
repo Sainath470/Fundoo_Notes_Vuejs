@@ -32,7 +32,7 @@
     <aside class="sidebar" id="sidebar">
       <li>
         <i class="material-icons"><LightBulbIcon /></i>
-        <a href="#"><span id="A">Notes</span></a>
+        <a href="/createNotes"><span id="A">Notes</span></a>
       </li>
       <li>
         <i class="material-icons"><bellIcon /></i>
@@ -78,9 +78,6 @@ export default {
     ArchiveIcon,
     TrashIcon,
     CreateNotes,
-  },
-  data() {
-    return {};
   },
   methods: {},
 };
