@@ -22,6 +22,9 @@
           v-model="description"
           placeholder="Take a note . ."
         ></textarea>
+        <div class="bottom-icons">
+          <Icons />
+        </div>
         <div>
           <button
             type="submit"
@@ -38,9 +41,10 @@
 
 <script>
 import paintBurshIcon from "vue-material-design-icons/Brush.vue";
-import ImageIcon from "vue-material-design-icons/Image.vue";
+import ImageIcon from "vue-material-design-icons/ImageOutline.vue";
 import CheckboxIcon from "vue-material-design-icons/CheckBoxOutline.vue";
 import service from "../Services/User";
+import Icons from "./Icons.vue";
 
 export default {
   name: "createNotes",
@@ -48,6 +52,7 @@ export default {
     paintBurshIcon,
     ImageIcon,
     CheckboxIcon,
+    Icons,
   },
   data() {
     return {

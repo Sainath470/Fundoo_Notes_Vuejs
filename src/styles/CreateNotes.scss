@@ -4,7 +4,7 @@
     width: 450px;
     margin-top: 70px;
     margin-left: 200px;
-    height: 30px;
+    height: 40px;
     border-radius: 1px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
@@ -12,12 +12,13 @@
     padding-left: 10px;
     background: $dull_white;
     border: none;
-    border-radius: 2px;
-    box-shadow: 0 3px 5px $box_shadow;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 9px $box_shadow;
 }
 
 .icons{
-    margin-top: -28px;
+    margin-top: -35px;
     margin-left: 350px;   
     cursor: pointer;  
 }
@@ -49,6 +50,7 @@ i:hover{
 
 .createNote{
     padding-top: 12px;
+    border-radius: 10px;
 }
 
 .create-notes{
@@ -59,16 +61,14 @@ i:hover{
     margin-left: 260px;
     background: $dull_white;
     padding: 15px;
-    border-radius: 2px;
-    box-shadow: 0 3px 5px $box_shadow;
+    box-shadow: 0 4px 9px $box_shadow;
 }
 
 .create-notes input {
     width: 100%;
     max-width: 100%;
     border: none;
-    padding: 4px;
-    outline: none;
+    margin-top: -10px;
     font-size: 18px;
 }
 
@@ -79,9 +79,11 @@ textarea {
     padding: 4px;
     outline: none;
     font-size: 18px;
+    margin-top: 20px;
 }
 
 button{
+    margin-top: -25px;
     margin-left: 340px;
     border: none;
     font-weight: 500;
@@ -89,6 +91,16 @@ button{
     font-size: 15px;
     background-color: $white;
 }
+
+button:hover{
+    background-color: #d0d8df;
+}
+
+.bottom-icons{
+    margin-top: 30px;
+    margin-left: -260px;
+}
+
 @media (min-width: 600px) {
 
 body {

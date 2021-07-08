@@ -35,16 +35,13 @@ export default new Router({
         },
         {
             path: '/dashboard',
-            name: 'Dashboard',
             component: Dashboard,
             children: [{
                 path: '/createNotes',
-                name: CreateNotes,
                 component: CreateNotes
             },
             {
                 path: '/getNotes',
-                name: GetNotes,
                 component: GetNotes
             }]
         }

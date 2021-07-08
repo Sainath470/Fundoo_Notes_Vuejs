@@ -47,8 +47,6 @@ background-color: #F0F0F0;
 border-radius: 50%;
 }
 
-
-
 .icons-header:hover {
 color: initial;
 background-color: #ddd7d7;
@@ -70,6 +68,35 @@ display: none;
 display: none;
 }
 
+.logo-names{
+    margin-top: -180px;
+    margin-left: 60px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.logo-name-one{
+    padding-bottom: 15px;
+    margin-left: -30px;
+}
+.logo-name-two{
+    padding-bottom: 17px;
+    margin-left: 5px;
+}
+.logo-name-three{
+    padding-bottom: 18px;
+    margin-left: 10px;
+    
+}
+.logo-name-four{
+    padding-bottom: 18px;
+    margin-left: -12px;
+}
+.logo-name-five{
+    padding-bottom: 18px;
+    margin-left: -30px;
+}
 
 // /* aside */
 aside {
@@ -100,20 +127,19 @@ padding-top: 4px;
 padding-left: 24px;
 }
 
-li.active {
-background-color:#FEEFC3;
-}
+// li.active {
+// background-color:#FEEFC3;
+// }
 
-li.active:hover {
-background-color:none;
-}
+// li.active:hover {
+// background-color:none;
+// }
 
-li:not(.active):hover{
-background-color:#e2cf9c; 
-width: 270px;
-transition: 0.5s;
-transition-property: left;
-}
+// li:hover{
+// background-color:#e2cf9c; 
+// width: 27px;
+// transition: 0.5s;
+// }
 
 
 

@@ -2,7 +2,7 @@
   <div>
     <header class="flex-container">
       <nav class="items">
-        <button class="navbar-button">
+        <button class="navbar-button" @click="hide" @dblclick="show">
           <menu-icon />
         </button>
       </nav>
@@ -29,27 +29,44 @@
         </div>
       </div>
     </header>
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar">
       <li>
         <i class="material-icons"><LightBulbIcon /></i>
-        <a href="/createNotes"><span id="A">Notes</span></a>
+        <a href=""></a>
       </li>
       <li>
         <i class="material-icons"><bellIcon /></i>
-        <a href="#"><span id="B">Reminders</span></a>
+        <a href="#"></a>
       </li>
       <li>
         <i class="material-icons"><EditLabelIcon /></i>
-        <a href="#"><span id="C">Edit labels</span></a>
+        <a href="#"></a>
       </li>
       <li>
         <i class="material-icons"><ArchiveIcon /></i>
-        <a href="#"><span id="D">Archive</span></a>
+        <a href="#"></a>
       </li>
       <li>
         <i class="material-icons"><TrashIcon /></i>
-        <a href="#"><span id="E">Trash</span></a>
+        <a href="#"></a>
       </li>
+      <div class="logo-names" id="logo">
+        <div class="logo-name-one">
+          <span>Notes</span>
+        </div>
+        <div class="logo-name-two">
+          <span>Reminders</span>
+        </div>
+        <div class="logo-name-three">
+          <span>Edit Labels</span>
+        </div>
+        <div class="logo-name-four">
+          <span>Archive</span>
+        </div>
+        <div class="logo-name-five">
+          <span>Trash</span>
+        </div>
+      </div>
     </aside>
     <CreateNotes />
   </div>
@@ -58,12 +75,12 @@
 <script>
 import MenuIcon from "vue-material-design-icons/Menu.vue";
 import SelectSearchIcon from "vue-material-design-icons/SearchWeb.vue";
-import ProfileIcon from "vue-material-design-icons/AccountCircle.vue";
-import LightBulbIcon from "vue-material-design-icons/Lightbulb.vue";
+import ProfileIcon from "vue-material-design-icons/AccountCircleOutline.vue";
+import LightBulbIcon from "vue-material-design-icons/LightbulbOutline.vue";
 import bellIcon from "vue-material-design-icons/BellAlertOutline.vue";
-import EditLabelIcon from "vue-material-design-icons/Pen";
-import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDown.vue";
-import TrashIcon from "vue-material-design-icons/TrashCan.vue";
+import EditLabelIcon from "vue-material-design-icons/PencilOutline.vue";
+import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDownOutline.vue";
+import TrashIcon from "vue-material-design-icons/TrashCanOutline.vue";
 import CreateNotes from "./CreateNotes.vue";
 
 export default {
@@ -79,7 +96,14 @@ export default {
     TrashIcon,
     CreateNotes,
   },
-  methods: {},
+  methods: {
+    hide() {
+      document.getElementById("logo").style.display = "none";
+    },
+    show() {
+      document.getElementById("logo").style.display = "block";
+    },
+  },
 };
 </script>
 

@@ -24,7 +24,7 @@
         Sign in
       </button>
       <div class="signup-link">
-        <a href="/register">Create account</a>
+        <a href="/">Create account</a>
       </div>
       <div class="forgot-password">
         <a href="http://localhost:8080/forgotPassword">Forgot Password</a>
