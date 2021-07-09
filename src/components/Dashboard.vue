@@ -69,6 +69,7 @@
       </div>
     </aside>
     <CreateNotes />
+    <DisplayNotes />
   </div>
 </template>
 
@@ -82,6 +83,7 @@ import EditLabelIcon from "vue-material-design-icons/PencilOutline.vue";
 import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDownOutline.vue";
 import TrashIcon from "vue-material-design-icons/TrashCanOutline.vue";
 import CreateNotes from "./CreateNotes.vue";
+import DisplayNotes from "./DisplayNotes.vue";
 
 export default {
   name: "Dashboard",
@@ -95,6 +97,7 @@ export default {
     ArchiveIcon,
     TrashIcon,
     CreateNotes,
+    DisplayNotes,
   },
   methods: {
     hide() {

@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <div v-on:click="changeState()" class="input-box" v-if="state == true">
-      <input type="text" placeholder="Take a note.." />
+    <div class="input-box" v-if="state == true">
+      <input
+        type="text"
+        v-on:click="changeState()"
+        placeholder="Take a note.."
+      />
       <div class="icons">
         <span class="first-image"
           ><i><CheckboxIcon /></i
@@ -25,7 +29,7 @@
         <div class="bottom-icons">
           <Icons />
         </div>
-        <div>
+        <div class="bottom-close">
           <button
             type="submit"
             @click="changeState()"

@@ -6,7 +6,7 @@ import ForgotPassword from './Pages/ForgotPassword'
 import ResetPassword from './Pages/ResetPassword'
 import Dashboard from './components/Dashboard'
 import CreateNotes from './components/CreateNotes'
-import GetNotes from './components/GetNotes'
+import DisplayNotes from './components/DisplayNotes'
 
 Vue.use(Router)
 
@@ -41,8 +41,8 @@ export default new Router({
                 component: CreateNotes
             },
             {
-                path: '/getNotes',
-                component: GetNotes
+                path: '/displayNotes',
+                component: DisplayNotes
             }]
         }
     ]

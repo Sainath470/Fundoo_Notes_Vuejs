@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
     <div class="first-icon">
-      <i><bellIcon /></i>
+      <div class="a"><bellIcon /></div>
     </div>
     <div class="second-icon">
       <i><CollaboratorIcon /></i>

@@ -48,15 +48,11 @@ i:hover{
     font-size: 20px;
 }
 
-.createNote{
-    padding-top: 12px;
-    border-radius: 10px;
-}
 
 .create-notes{
     position: relative;
     width: 400px;
-    max-width: 100%;
+    height: 120px;
     margin-top: 60px;
     margin-left: 260px;
     background: $dull_white;
@@ -76,15 +72,17 @@ textarea {
     width: 100%;
     max-width: 100%;
     border: none;
-    padding: 4px;
     outline: none;
     font-size: 18px;
-    margin-top: 20px;
+}
+
+.bottom-close{
+    margin-top: -20px;
 }
 
 button{
-    margin-top: -25px;
-    margin-left: 340px;
+    margin-top: -75px;
+    margin-left: 310px;
     border: none;
     font-weight: 500;
     cursor: pointer;
