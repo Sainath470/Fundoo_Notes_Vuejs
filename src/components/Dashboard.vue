@@ -2,9 +2,7 @@
   <div>
     <header class="flex-container">
       <nav class="items">
-        <button class="navbar-button" @click="hide" @dblclick="show">
-          <menu-icon />
-        </button>
+        <button class="fas fa-bas" @click="hide" @dblclick="show"></button>
       </nav>
       <div class="items flex-container">
         <img
@@ -18,37 +16,32 @@
       <div class="options items flex-container">
         <div class="search">
           <button class="icons-header">
-            <i class="material-icons"><SelectSearchIcon /></i>
+            <i class="fas fa-search"></i>
           </button>
           <input type="text" class="text-search" placeholder="Search" />
         </div>
         <div>
           <button class="icons-header">
-            <i class="material-icons"><ProfileIcon /></i>
+            <i class="fas fa-user-circle"></i>
           </button>
         </div>
       </div>
     </header>
     <aside class="sidebar">
       <li>
-        <i class="material-icons"><LightBulbIcon /></i>
-        <a href=""></a>
+        <a href=""><i class="fas fa-lightbulb"></i></a>
       </li>
       <li>
-        <i class="material-icons"><bellIcon /></i>
-        <a href="#"></a>
+        <a href=""><i class="fas fa-bell"></i></a>
       </li>
       <li>
-        <i class="material-icons"><EditLabelIcon /></i>
-        <a href="#"></a>
+        <a href=""><i class="fas fa-pen-square"></i></a>
       </li>
       <li>
-        <i class="material-icons"><ArchiveIcon /></i>
-        <a href="#"></a>
+        <a href=""><i class="fas fa-archive"></i></a>
       </li>
       <li>
-        <i class="material-icons"><TrashIcon /></i>
-        <a href="#"></a>
+        <a href=""><i class="fas fa-trash-alt"></i></a>
       </li>
       <div class="logo-names" id="logo">
         <div class="logo-name-one">
@@ -74,28 +67,12 @@
 </template>
 
 <script>
-import MenuIcon from "vue-material-design-icons/Menu.vue";
-import SelectSearchIcon from "vue-material-design-icons/SearchWeb.vue";
-import ProfileIcon from "vue-material-design-icons/AccountCircleOutline.vue";
-import LightBulbIcon from "vue-material-design-icons/LightbulbOutline.vue";
-import bellIcon from "vue-material-design-icons/BellAlertOutline.vue";
-import EditLabelIcon from "vue-material-design-icons/PencilOutline.vue";
-import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDownOutline.vue";
-import TrashIcon from "vue-material-design-icons/TrashCanOutline.vue";
 import CreateNotes from "./CreateNotes.vue";
 import DisplayNotes from "./DisplayNotes.vue";
 
 export default {
   name: "Dashboard",
   components: {
-    MenuIcon,
-    SelectSearchIcon,
-    ProfileIcon,
-    LightBulbIcon,
-    bellIcon,
-    EditLabelIcon,
-    ArchiveIcon,
-    TrashIcon,
     CreateNotes,
     DisplayNotes,
   },

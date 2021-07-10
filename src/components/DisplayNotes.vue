@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @submit.prevent="handleSubmit()">
+  <div class="container" @click="handleSubmit">
     <div v-for="Note in Notes" :key="Note.id" class="notes-container">
       <div class="notes">
         <h4>{{ Note.title }}</h4>

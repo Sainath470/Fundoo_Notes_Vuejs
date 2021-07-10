@@ -17,7 +17,7 @@ export default {
     userCreateNote(data) {
         return axios.postData("/auth/addNotes", data)
     },
-    userDisplayNotes() {
-        return axios.getData("/auth/getNotes")
+    userDisplayNotes(data) {
+        return axios.getData("/auth/getNotes", data)
     }
 }

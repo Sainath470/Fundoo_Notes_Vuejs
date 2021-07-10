@@ -1,43 +1,29 @@
 <template>
   <div class="icons">
     <div class="first-icon">
-      <div class="a"><bellIcon /></div>
+      <i class="fas fa-bell"></i>
     </div>
     <div class="second-icon">
-      <i><CollaboratorIcon /></i>
+      <i class="fas fa-user-plus"></i>
     </div>
     <div class="third-icon">
-      <i><ColorsIcon /></i>
+      <i class="fas fa-palette"></i>
     </div>
     <div class="fourth-icon">
-      <i><ImageIcon /></i>
+      <i clss="fas fa-image"></i>
     </div>
     <div class="fifth-icon">
-      <i><ArchiveIcon /></i>
+      <i class="fas fa-archive"></i>
     </div>
     <div class="sixth-icon">
-      <i><DotsIcon /></i>
+      <i class="fas fa-ellipsis-v"></i>
     </div>
   </div>
 </template>
 
 <script>
-import bellIcon from "vue-material-design-icons/BellOutline.vue";
-import CollaboratorIcon from "vue-material-design-icons/AccountPlus.vue";
-import ColorsIcon from "vue-material-design-icons/InvertColors.vue";
-import ImageIcon from "vue-material-design-icons/ImageOutline.vue";
-import ArchiveIcon from "vue-material-design-icons/ArchiveArrowDownOutline.vue";
-import DotsIcon from "vue-material-design-icons/DotsVertical.vue";
-
 export default {
-  components: {
-    bellIcon,
-    CollaboratorIcon,
-    ColorsIcon,
-    ImageIcon,
-    ArchiveIcon,
-    DotsIcon,
-  },
+  components: {},
 };
 </script>
 

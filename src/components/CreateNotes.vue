@@ -7,15 +7,9 @@
         placeholder="Take a note.."
       />
       <div class="icons">
-        <span class="first-image"
-          ><i><CheckboxIcon /></i
-        ></span>
-        <span class="second-image"
-          ><i><paintBurshIcon /></i
-        ></span>
-        <span class="third-image"
-          ><i><ImageIcon /></i
-        ></span>
+        <span class="first-image"><i class="fas fa-check-square"></i></span>
+        <span class="second-image"><i class="fas fa-paint-brush"></i></span>
+        <span class="third-image"><i class="fas fa-image"></i></span>
       </div>
     </div>
     <div class="createNote" v-if="state == false">
@@ -44,18 +38,12 @@
 </template>
 
 <script>
-import paintBurshIcon from "vue-material-design-icons/Brush.vue";
-import ImageIcon from "vue-material-design-icons/ImageOutline.vue";
-import CheckboxIcon from "vue-material-design-icons/CheckBoxOutline.vue";
 import service from "../Services/User";
 import Icons from "./Icons.vue";
 
 export default {
   name: "createNotes",
   components: {
-    paintBurshIcon,
-    ImageIcon,
-    CheckboxIcon,
     Icons,
   },
   data() {
