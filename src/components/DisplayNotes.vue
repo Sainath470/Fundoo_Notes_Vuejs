@@ -1,49 +1,56 @@
 <template>
-  <div class="container" @click="handleSubmit">
-    <div v-for="Note in Notes" :key="Note.id" class="notes-container">
-      <div class="notes">
-        <h4>{{ Note.title }}</h4>
-        <p>{{ Note.description }}</p>
+  <div class="container">
+    <div v-for="note in list" v-bind:key="note.id" class="notes-container">
+      <div class="notes" @click="changeState">
+        <h4>{{ note.title }}</h4>
+        <p>{{ note.description }}</p>
         <div class="note-icons"><Icons /></div>
       </div>
-      <div class="display-icons">
-        <button v-if="state == false" type="button">Close</button>
-      </div>
+    </div>
+    <div class="update-component">
+      <UpdateNotes
+        v-if="state == false"
+        :noteId="selectedNote"
+        :noteContent="noteContent"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import service from "../Services/User";
+import UpdateNotes from "./UpdateNote.vue";
 import Icons from "./Icons.vue";
 
 export default {
   name: "DisplayNotes",
   components: {
     Icons,
+    UpdateNotes,
   },
   data() {
     return {
       state: true,
-      default_state: true,
-      Notes: [
-        {
-          id: 1,
-          title: "Fundoo",
-          description: "Notes",
-        },
-      ],
+      list: {},
+      selectedNote: "",
+      noteContent: {},
     };
   },
   methods: {
     changeState() {
       this.state = !this.state;
     },
-    async handleSubmit() {
-      service.userDisplayNotes().then((response) => {
-        this.Notes.push(...response.data);
-      });
-    },
+  },
+  mounted() {
+    if (localStorage.getItem("reloaded")) {
+      localStorage.removeItem("reloaded");
+    } else {
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
+    service.userDisplayNotes().then((response) => {
+      this.list = response.data;
+    });
   },
 };
 </script>

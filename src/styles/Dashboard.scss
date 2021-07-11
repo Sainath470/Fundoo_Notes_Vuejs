@@ -10,11 +10,16 @@ button {
 color: #6F6F6F;
 background-color: transparent;
 border:none;
+padding-right: 10px;
+font-size: 20px;
 }
+
+
+
 
 .img-keep{
     width: 30px; 
-    height: 40px;
+    height: 30px;
 }
 
 button:hover {
@@ -61,8 +66,12 @@ padding-left: 8px;
 }
 
 .text-search {
-display: none;
+display: block;
+cursor: pointer;
+border: none;
+outline: none;
 }
+
 
 .view_list{
 display: none;
@@ -112,7 +121,7 @@ position: fixed;
 a {
 padding-left: 22px;
 text-decoration:none;
-color: #202124; 
+color: #0b0b0c; 
 font-family: 'Roboto';
 }
 
@@ -143,10 +152,6 @@ padding-left: 24px;
 
 
 
-li>i {
-color: #6F6F6F;
-}
-
 @media (min-width: 600px) {
 
 body {
@@ -172,6 +177,7 @@ height: 32px;
 /* header */
 .text-search {
 display: block;
+cursor: pointer;
 border: none;
 outline: none;
 }
@@ -184,5 +190,6 @@ font-family: 'Roboto';
 /* aside */
 aside {
 display: block;
+margin-left: -30px;
 }
 }

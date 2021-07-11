@@ -2,7 +2,7 @@
   <div>
     <header class="flex-container">
       <nav class="items">
-        <button class="fas fa-bas" @click="hide" @dblclick="show"></button>
+        <button class="fas fa-bars" @click="hide" @dblclick="show"></button>
       </nav>
       <div class="items flex-container">
         <img

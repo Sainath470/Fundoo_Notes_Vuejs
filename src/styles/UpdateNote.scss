@@ -1,0 +1,43 @@
+.update-container{
+    width: 550px;
+    height: 180px;
+    border: 1px solid rgb(231, 230, 230);
+    border-radius: 10px;
+    margin-left: -40px;
+}
+
+.update-note input{
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.update-note textarea{
+    display: block;
+    margin-top: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    display: flex;
+    margin-left: 490px;
+    margin-top: -20px;
+    border: none;
+    font-size: 15px;
+    background: none;
+    cursor: pointer;
+}
+
+.bottom-icons{
+    margin-top: 40px;
+    margin-left: 70px;
+    letter-spacing: 40px;
+}

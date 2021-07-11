@@ -7,6 +7,7 @@ import ResetPassword from './Pages/ResetPassword'
 import Dashboard from './components/Dashboard'
 import CreateNotes from './components/CreateNotes'
 import DisplayNotes from './components/DisplayNotes'
+import UpdateNote from './components/UpdateNote'
 
 Vue.use(Router)
 
@@ -43,6 +44,10 @@ export default new Router({
             {
                 path: '/displayNotes',
                 component: DisplayNotes
+            },
+            {
+                path: '/updateNotes',
+                component: UpdateNote
             }]
         }
     ]
