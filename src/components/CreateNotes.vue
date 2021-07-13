@@ -69,15 +69,11 @@ export default {
       };
       this.clearForm();
       service.userCreateNote(userData).then((response) => {
-        if (localStorage.getItem("reloaded")) {
-          localStorage.removeItem("reloaded");
-        } else {
-          localStorage.setItem("reloaded", "1");
-          location.reload();
-        }
         if (response.data.status == 201) {
           localStorage.getItem("token", response.data.token);
           alert("Note created successfully");
+          localStorage.setItem("reloaded", "1");
+          location.reload();
           return response;
         }
         if (response.data.status == 403) {

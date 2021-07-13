@@ -1,18 +1,23 @@
 <template>
   <div class="container">
-    <div v-for="note in list" v-bind:key="note.id" class="notes-container">
-      <div class="notes" @click="changeState">
-        <h4>{{ note.title }}</h4>
-        <p>{{ note.description }}</p>
-        <div class="note-icons"><Icons /></div>
+    <div
+      v-for="note in list"
+      v-bind:key="note.id"
+      class="notes-container"
+      @click="toggle(note.id)"
+    >
+      <div class="notes" id="notes">
+        <h4 @click="changeState()">
+          {{ note.title }}
+        </h4>
+        <p @click="changeState()">
+          {{ note.description }}
+        </p>
+        <div class="note-icons"><Icons :cardId="note.id" /></div>
       </div>
     </div>
-    <div class="update-component">
-      <UpdateNotes
-        v-if="state == false"
-        :noteId="selectedNote"
-        :noteContent="noteContent"
-      />
+    <div class="update-component" id="pop" v-if="state">
+      <UpdateNotes :cardId="clickedCard" :cardContent="noteDetails" />
     </div>
   </div>
 </template>
@@ -30,18 +35,13 @@ export default {
   },
   data() {
     return {
-      state: true,
+      state: false,
       list: {},
-      selectedNote: "",
-      noteContent: {},
+      clickedCard: "",
+      cardContent: {},
     };
   },
-  methods: {
-    changeState() {
-      this.state = !this.state;
-    },
-  },
-  mounted() {
+  created() {
     if (localStorage.getItem("reloaded")) {
       localStorage.removeItem("reloaded");
     } else {
@@ -51,6 +51,18 @@ export default {
     service.userDisplayNotes().then((response) => {
       this.list = response.data;
     });
+  },
+  methods: {
+    changeState() {
+      this.state = !this.state;
+    },
+    toggle(id) {
+      // var blur = document.getElementById("blur");
+      // blur.classList.toggle("active");
+      this.clickedCard = id;
+      // var pop = document.getElementById("pop");
+      // pop.classList.toggle("active");
+    },
   },
 };
 </script>

@@ -19,4 +19,22 @@ export default class AxiosService {
             return error;
         })
     }
+
+    updateData(url, data) {
+        return axios.put(url, data).then(response => {
+            localStorage.getItem('token', response.data.token);
+            return response;
+        }).catch(error => {
+            return error;
+        })
+    }
+
+    userTrash(url, data) {
+        return axios.post(url, data).then(response => {
+            localStorage.getItem('token', response.data.token);
+            return response;
+        }).catch(error => {
+            return error;
+        })
+    }
 }

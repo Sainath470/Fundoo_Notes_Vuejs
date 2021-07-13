@@ -16,14 +16,50 @@
       <i class="fas fa-archive"></i>
     </div>
     <div class="sixth-icon">
-      <i class="fas fa-ellipsis-v"></i>
+      <i @click="clickedFunction" class="fas fa-ellipsis-v"></i>
+      <div ref="myDropdown" class="dropdown-content">
+        <a @click="handleSubmit()">Delete note</a>
+        <a>Add Label</a>
+        <a>Edit Label</a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import service from "../Services/User";
 export default {
-  components: {},
+  props: ["cardId"],
+  data() {
+    return {
+      clickedCard: "",
+    };
+  },
+  methods: {
+    clickedFunction(event) {
+      this.$refs.myDropdown.classList.toggle("show");
+      return event;
+    },
+    handleSubmit() {
+      let userData = {
+        id: this.cardId,
+      };
+      service
+        .userDeleteNote(userData)
+        .then((response) => {
+          if (response.data.status == 201) {
+            console.log(response);
+            alert("Note deleted successfully");
+            location.reload();
+            return response;
+          }
+        })
+        .catch((error) => {
+          alert("Error");
+          return error;
+        });
+    },
+  },
 };
 </script>
 

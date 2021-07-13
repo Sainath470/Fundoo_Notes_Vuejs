@@ -1,6 +1,6 @@
 <template>
   <div class="update-container">
-    <form class="update-note">
+    <form class="update-note" @submit.prevent="">
       <input name="title" v-model="title" placeholder="Title" />
       <textarea
         name="description"
@@ -23,7 +23,7 @@ export default {
   components: {
     Icons,
   },
-  props: ["selectedNote", "noteContent"],
+  props: ["cardId", "cardContent"],
   data() {
     return {
       title: "",
@@ -31,21 +31,25 @@ export default {
     };
   },
   created() {
-    this.title = this.noteContent.title;
-    this.description = this.noteContent.description;
+    this.title = this.cardContent.title;
+    this.description = this.cardContent.description;
   },
   methods: {
+    changeState() {
+      this.state = !this.state;
+    },
     handleSubmit() {
       let userDate = {
-        id: this.selectedNote,
+        id: this.cardId,
         title: this.title,
         description: this.description,
       };
       service
         .userUpdateNote(userDate)
         .then((response) => {
+          if (response.data.status == 201) console.log(response);
           alert("Note update successfully");
-          return response;
+          location.reload();
         })
         .catch((error) => {
           alert("Error");

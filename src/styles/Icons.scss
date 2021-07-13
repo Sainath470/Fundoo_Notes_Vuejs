@@ -30,3 +30,39 @@
     opacity: .54;
     padding-right: 15px;
 }
+
+
+.sixth-icon {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+}
+
+.sixth-icon a {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    margin-left: 40%;
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: $black;
+    padding: 8px 17px;
+    text-decoration: none;
+    display: block;
+    background-color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(241, 234, 234)
+}
+
+.show {
+    display: block;
+}

@@ -1,9 +1,14 @@
 .update-container{
+    position: fixed;
     width: 550px;
     height: 180px;
-    border: 1px solid rgb(231, 230, 230);
+    border:1px solid rgb(65, 61, 61);
     border-radius: 10px;
-    margin-left: -40px;
+    margin-left: -440px;
+    margin-top: -170px;
+    // box-shadow: 0 1px 5px black;
+    background-color: white;
+    box-shadow: 3px gray;
 }
 
 .update-note input{

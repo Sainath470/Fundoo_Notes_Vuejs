@@ -21,6 +21,9 @@ export default {
         return axios.getData("/auth/getNotes")
     },
     userUpdateNote(data) {
-        return axios.getData("/auth/updateNote", data)
+        return axios.updateData("/auth/updateNote", data)
+    },
+    userDeleteNote(data) {
+        return axios.userTrash("/auth/deleteNote", data)
     }
 }
