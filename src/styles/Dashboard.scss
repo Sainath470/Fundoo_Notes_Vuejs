@@ -72,6 +72,14 @@ border: none;
 outline: none;
 }
 
+#blur.active{
+	filter: blur(5px);
+//     background-position: 120px;
+//      top: 500px;
+//   left: 50%;
+}
+
+
 
 .view_list{
 display: none;

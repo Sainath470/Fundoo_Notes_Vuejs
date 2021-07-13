@@ -14,11 +14,12 @@
     </div>
     <div class="createNote" v-if="state == false">
       <form class="create-notes" @submit.prevent="">
-        <input name="title" v-model="title" placeholder="Title" />
+        <input name="title" v-model="title" placeholder="Title" size="50" />
         <textarea
           name="content"
           v-model="description"
           placeholder="Take a note . ."
+          size="50"
         ></textarea>
         <div class="bottom-icons">
           <Icons />
@@ -72,7 +73,6 @@ export default {
         if (response.data.status == 201) {
           localStorage.getItem("token", response.data.token);
           alert("Note created successfully");
-          localStorage.setItem("reloaded", "1");
           location.reload();
           return response;
         }

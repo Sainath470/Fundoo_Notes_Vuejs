@@ -1,23 +1,32 @@
 <template>
-  <div class="container">
-    <div
-      v-for="note in list"
-      v-bind:key="note.id"
-      class="notes-container"
-      @click="toggle(note.id)"
-    >
-      <div class="notes" id="notes">
-        <h4 @click="changeState()">
-          {{ note.title }}
-        </h4>
-        <p @click="changeState()">
-          {{ note.description }}
-        </p>
-        <div class="note-icons"><Icons :cardId="note.id" /></div>
+  <div class="main-container">
+    <div class="container" id="blur">
+      <div v-for="note in list" v-bind:key="note.id" class="notes-container">
+        <div class="notes" id="notes">
+          <h4
+            @click="
+              changeState();
+              toggle(note.id, note.title, note.description);
+            "
+          >
+            {{ note.title }}
+          </h4>
+          <p
+            @click="
+              changeState();
+              toggle(note.id, note.title, note.description);
+            "
+          >
+            {{ note.description }}
+          </p>
+          <div class="note-icons">
+            <Icons :cardId="note.id" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="update-component" id="pop" v-if="state">
-      <UpdateNotes :cardId="clickedCard" :cardContent="noteDetails" />
+      <UpdateNotes :cardId="clickedCard" :cardContent="cardContent" />
     </div>
   </div>
 </template>
@@ -39,8 +48,10 @@ export default {
       list: {},
       clickedCard: "",
       cardContent: {},
+      value: undefined,
     };
   },
+
   created() {
     if (localStorage.getItem("reloaded")) {
       localStorage.removeItem("reloaded");
@@ -56,12 +67,15 @@ export default {
     changeState() {
       this.state = !this.state;
     },
-    toggle(id) {
-      // var blur = document.getElementById("blur");
-      // blur.classList.toggle("active");
+    toggle(id, title, description) {
+      var blur = document.getElementById("blur");
+      blur.classList.toggle("active");
+      this.cardContent = { title, description };
       this.clickedCard = id;
-      // var pop = document.getElementById("pop");
-      // pop.classList.toggle("active");
+      console.log(this.clickedCard);
+      console.log(this.cardContent);
+      var pop = document.getElementById("pop");
+      pop.classList.toggle("active");
     },
   },
 };
