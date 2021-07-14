@@ -24,6 +24,15 @@ export default {
         return axios.updateData("/auth/updateNote", data)
     },
     userDeleteNote(data) {
-        return axios.userTrash("/auth/deleteNote", data)
+        return axios.userTrash("/auth/deleteNoteFromDisplayNotes", data)
+    },
+    userDisplayNotesInTrash(data) {
+        return axios.getData("/auth/trashNotes", data)
+    },
+    userDeleteNoteForever(data) {
+        return axios.postData("/auth/deleteNoteForever", data)
+    },
+    userRestoreNote(data) {
+        return axios.postData("/auth/restoreNote", data)
     }
 }

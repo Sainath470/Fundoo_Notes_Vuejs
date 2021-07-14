@@ -45,7 +45,7 @@
       </li>
       <div class="logo-names" id="logo">
         <div class="logo-name-one">
-          <span>Notes</span>
+          <span @click="changeState()">Notes</span>
         </div>
         <div class="logo-name-two">
           <span>Reminders</span>
@@ -57,26 +57,37 @@
           <span>Archive</span>
         </div>
         <div class="logo-name-five">
-          <span>Trash</span>
+          <span @click="changeState()">Trash</span>
         </div>
       </div>
     </aside>
-    <CreateNotes />
-    <DisplayNotes />
+    <CreateNotes v-if="flag == true" />
+    <DisplayNotes v-if="flag == true" />
+    <Trash v-if="flag == false" />
   </div>
 </template>
 
 <script>
 import CreateNotes from "./CreateNotes.vue";
 import DisplayNotes from "./DisplayNotes.vue";
+import Trash from "./Trash.vue";
 
 export default {
   name: "Dashboard",
   components: {
     CreateNotes,
     DisplayNotes,
+    Trash,
+  },
+  data() {
+    return {
+      flag: true,
+    };
   },
   methods: {
+    changeState() {
+      this.flag = !this.flag;
+    },
     hide() {
       document.getElementById("logo").style.display = "none";
     },
@@ -88,6 +99,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/Dashboard.scss";
+@import "@/styles/Dashboard.scss";
 </style>
 

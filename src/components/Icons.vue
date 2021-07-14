@@ -49,7 +49,7 @@ export default {
         .then((response) => {
           if (response.data.status == 201) {
             console.log(response);
-            alert("Note deleted successfully");
+            alert("Note moved to trash");
             location.reload();
             return response;
           }

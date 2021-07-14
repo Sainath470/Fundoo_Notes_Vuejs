@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import CreateNotes from './components/CreateNotes'
 import DisplayNotes from './components/DisplayNotes'
 import UpdateNote from './components/UpdateNote'
+import Trash from './components/Trash'
 
 Vue.use(Router)
 
@@ -48,6 +49,10 @@ export default new Router({
             {
                 path: '/updateNotes',
                 component: UpdateNote
+            },
+            {
+                path: '/trash',
+                component: Trash
             }]
         }
     ]

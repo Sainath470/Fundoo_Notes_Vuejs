@@ -1,27 +1,27 @@
 /***********************************************************************************
- * Purpose : To test DisplayNotes component
+ * Purpose : To test UpdateNote component
  * 
- * @file : Display.spec.js
+ * @file : UpdateNote.spec.js
  * @author : Venkata Sainath <akulavenkatasainath1997@gmail.com>
  * @version : 1.0
- * @since : 7/12/2021
+ * @since : 7/14/2021
  * 
  **********************************************************************************/
-import DisplayNotes from '../../src/components/DisplayNotes.vue';
+import UpdateNote from '../../src/components/UpdateNote.vue';
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 
-describe('DisplayNotes.vue', () => {
-    let wrapper = shallowMount(DisplayNotes);
+describe('UpdateNote.vue', () => {
+    let wrapper = shallowMount(UpdateNote);
     beforeEach(() => {
         const localVue = createLocalVue();
-        wrapper = shallowMount(DisplayNotes, localVue);
+        wrapper = shallowMount(UpdateNote, localVue);
     });
     test('setup correctly', () => {
         expect(true).toBe(true);
     });
 
     it('renders a vue instance', () => {
-        expect(shallowMount(DisplayNotes).vm).toBeTruthy();
+        expect(shallowMount(UpdateNote).vm).toBeTruthy();
     });
 
 })

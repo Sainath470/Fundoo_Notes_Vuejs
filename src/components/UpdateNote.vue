@@ -47,9 +47,10 @@ export default {
       service
         .userUpdateNote(userDate)
         .then((response) => {
-          if (response.data.status == 201) console.log(response);
-          alert("Note update successfully");
-          location.reload();
+          if (response.data.status == 201) {
+            alert("Note update successfully");
+            location.reload();
+          }
         })
         .catch((error) => {
           alert("Error");

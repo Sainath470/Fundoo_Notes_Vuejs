@@ -20,7 +20,7 @@
             {{ note.description }}
           </p>
           <div class="note-icons">
-            <Icons :cardId="note.id" />
+            <Icons class="imported-icons" :cardId="note.id" />
           </div>
         </div>
       </div>
@@ -48,7 +48,6 @@ export default {
       list: {},
       clickedCard: "",
       cardContent: {},
-      value: undefined,
     };
   },
 
@@ -60,6 +59,7 @@ export default {
       location.reload();
     }
     service.userDisplayNotes().then((response) => {
+      console.log(response);
       this.list = response.data;
     });
   },
@@ -72,8 +72,6 @@ export default {
       blur.classList.toggle("active");
       this.cardContent = { title, description };
       this.clickedCard = id;
-      console.log(this.clickedCard);
-      console.log(this.cardContent);
       var pop = document.getElementById("pop");
       pop.classList.toggle("active");
     },
