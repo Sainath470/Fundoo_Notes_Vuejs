@@ -54,7 +54,7 @@
           <span>Edit Labels</span>
         </div>
         <div class="logo-name-four">
-          <span>Archive</span>
+          <span @click="changeState()">Archive</span>
         </div>
         <div class="logo-name-five">
           <span @click="changeState()">Trash</span>
@@ -64,6 +64,7 @@
     <CreateNotes v-if="flag == true" />
     <DisplayNotes v-if="flag == true" />
     <Trash v-if="flag == false" />
+    <Archive />
   </div>
 </template>
 
@@ -71,6 +72,7 @@
 import CreateNotes from "./CreateNotes.vue";
 import DisplayNotes from "./DisplayNotes.vue";
 import Trash from "./Trash.vue";
+import Archive from "./Archive.vue";
 
 export default {
   name: "Dashboard",
@@ -78,10 +80,12 @@ export default {
     CreateNotes,
     DisplayNotes,
     Trash,
+    Archive,
   },
   data() {
     return {
       flag: true,
+      state: true,
     };
   },
   methods: {

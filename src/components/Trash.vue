@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-    <h1><i>Notes in Trash are deleted after 7 days. </i></h1>
     <div class="btn-empty-trash">
       <button>Empty Trash</button>
     </div>
@@ -11,10 +10,18 @@
           <p>{{ note.description }}</p>
         </div>
         <div class="note-icons">
-          <i class="fas fa-trash-alt" @click="moveToTrash(note.id)"></i>
+          <i
+            id="delete-icon"
+            class="fas fa-trash-alt"
+            @click="moveToTrash(note.id)"
+          ></i>
         </div>
         <div class="note-icons">
-          <i class="fas fa-trash-restore-alt" @click="restoreNote(note.id)"></i>
+          <i
+            id="restore-icon"
+            class="fas fa-trash-restore-alt"
+            @click="restoreNote(note.id)"
+          ></i>
         </div>
       </div>
     </div>

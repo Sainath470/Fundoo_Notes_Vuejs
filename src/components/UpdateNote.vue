@@ -1,16 +1,19 @@
 <template>
   <div class="update-container">
     <form class="update-note" @submit.prevent="">
-      <input name="title" v-model="title" placeholder="Title" />
+      <input name="title" id="title-name" v-model="title" placeholder="Title" />
       <textarea
+        id="input-description"
         name="description"
         v-model="description"
         placeholder="Take a note.."
       ></textarea>
       <div class="bottom-icons">
-        <Icons />
+        <Icons id="Icons-hover" />
       </div>
-      <button type="submit" @click="handleSubmit()">Close</button>
+      <button id="update-close" type="submit" @click="handleSubmit()">
+        Close
+      </button>
     </form>
   </div>
 </template>
@@ -30,10 +33,10 @@ export default {
       description: "",
     };
   },
-  created() {
-    this.title = this.cardContent.title;
-    this.description = this.cardContent.description;
-  },
+  // created() {
+  //   this.title = this.cardContent.title;
+  //   this.description = this.cardContent.description;
+  // },
   methods: {
     changeState() {
       this.state = !this.state;

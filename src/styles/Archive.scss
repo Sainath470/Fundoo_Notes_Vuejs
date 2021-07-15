@@ -12,23 +12,6 @@
 }
 
 
-.btn-empty-trash{
-    margin-top: 55px;
-    margin-left: 600px;
-}
-
-button{
-    border: none;
-    font-family: 'Times New Roman', Times, serif;
-    background: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-button:hover{
-    background-color: lightblue;
-}
-
 .notes-container{
     display: flex;
     border: 1px solid rgb(241, 233, 233);
@@ -75,29 +58,12 @@ button:hover{
 }
 
 
-.fa-trash-alt{
-    display: flex;
-    margin-top: 90px;   
-    letter-spacing: 20px;
-    margin-left: -40px;
-    font-size: 12px;
-}
-
-.fa-trash-restore-alt{
-    display: block;
-    margin-top: 90px;   
-    letter-spacing: 20px;
-    margin-left:10px;
-    font-size: 12px;
-}
-
-
-.note-icons:hover{
-.note-icons{
-    display: block;
-    // margin-left: 270px;
-}
-}
+// .note-icons:hover{
+// .note-icons{
+//     display: block;
+//     margin-left: 270px;
+// }
+// }
 
 
 

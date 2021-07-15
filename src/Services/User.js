@@ -34,5 +34,14 @@ export default {
     },
     userRestoreNote(data) {
         return axios.postData("/auth/restoreNote", data)
+    },
+    userMoveNoteToArchive(data) {
+        return axios.postData("/auth/archive", data)
+    },
+    userRestoreFromArchive(data) {
+        return axios.postData("/auth/restoreArchive", data)
+    },
+    userNotesInArchive(data) {
+        return axios.getData("/auth/archiveNotes", data)
     }
 }

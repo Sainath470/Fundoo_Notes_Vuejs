@@ -24,4 +24,20 @@ describe('UpdateNote.vue', () => {
         expect(shallowMount(UpdateNote).vm).toBeTruthy();
     });
 
+    it('it button to update the selected Note', () => {
+        expect(wrapper.find('#update-close')).toBeTruthy();
+    });
+
+    it('it has a icons component only appear when hovered and perform actions', () => {
+        expect(wrapper.find('#Icons-hover')).toBeTruthy();
+    });
+
+    it('it has a input field to take title', () => {
+        expect(wrapper.find('#title-name')).toBeTruthy();
+    });
+
+    it('it has a text area field to take input description', () => {
+        expect(wrapper.find('#input-description')).toBeTruthy();
+    });
 })
+

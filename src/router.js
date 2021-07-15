@@ -53,6 +53,10 @@ export default new Router({
             {
                 path: '/trash',
                 component: Trash
+            },
+            {
+                path: '/archive',
+                component: Trash
             }]
         }
     ]

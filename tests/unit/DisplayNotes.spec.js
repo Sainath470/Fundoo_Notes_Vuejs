@@ -24,4 +24,12 @@ describe('DisplayNotes.vue', () => {
         expect(shallowMount(DisplayNotes).vm).toBeTruthy();
     });
 
+    it('it has a container to render the notes present for particular user and display', () => {
+        expect(wrapper.find('.container')).toBeTruthy();
+    });
+
+    it('it has update component when clicked on particular note it gets popped', () => {
+        expect(wrapper.find('#pop')).toBeTruthy();
+    });
+
 })

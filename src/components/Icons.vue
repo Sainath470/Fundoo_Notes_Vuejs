@@ -13,7 +13,7 @@
       <i clss="fas fa-image"></i>
     </div>
     <div class="fifth-icon">
-      <i class="fas fa-archive"></i>
+      <i class="fas fa-archive" @click="moveToArchive()"></i>
     </div>
     <div class="sixth-icon">
       <i @click="clickedFunction" class="fas fa-ellipsis-v"></i>
@@ -53,6 +53,38 @@ export default {
             location.reload();
             return response;
           }
+        })
+        .catch((error) => {
+          alert("Error");
+          return error;
+        });
+    },
+    moveToArchive(clickedId) {
+      let userDate = {
+        id: clickedId,
+      };
+      console.log(userDate);
+      service
+        .userMoveNoteToArchive(userDate)
+        .then((response) => {
+          console.log(response);
+          alert("Note moved to Archive");
+        })
+        .catch((error) => {
+          alert("Error");
+          return error;
+        });
+    },
+    restoreNoteToDisplay(clickedId) {
+      let userDate = {
+        id: clickedId,
+      };
+      console.log(userDate);
+      service
+        .userRestoreFromArchive(userDate)
+        .then((response) => {
+          console.log(response);
+          alert("Note Unarchived");
         })
         .catch((error) => {
           alert("Error");
