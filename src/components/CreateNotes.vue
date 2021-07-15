@@ -19,7 +19,6 @@
           name="content"
           v-model="description"
           placeholder="Take a note . ."
-          size="50"
         ></textarea>
         <div class="bottom-icons">
           <Icons />

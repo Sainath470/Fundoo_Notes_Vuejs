@@ -54,17 +54,17 @@
           <span>Edit Labels</span>
         </div>
         <div class="logo-name-four">
-          <span @click="changeState()">Archive</span>
+          <span @click="changeArchive()">Archive</span>
         </div>
         <div class="logo-name-five">
-          <span @click="changeState()">Trash</span>
+          <span @click="changeTrash()">Trash</span>
         </div>
       </div>
     </aside>
-    <CreateNotes v-if="flag == true" />
-    <DisplayNotes v-if="flag == true" />
+    <CreateNotes v-if="state == true" />
+    <DisplayNotes v-if="state == true" />
     <Trash v-if="flag == false" />
-    <Archive />
+    <Archive v-if="temp == false" />
   </div>
 </template>
 
@@ -84,13 +84,22 @@ export default {
   },
   data() {
     return {
-      flag: true,
       state: true,
+      flag: true,
+      temp: true,
     };
   },
   methods: {
-    changeState() {
+    changeTrash() {
+      this.state = !this.state;
       this.flag = !this.flag;
+    },
+    changeArchive() {
+      this.state = !this.state;
+      this.temp = !this.temp;
+    },
+    changeState() {
+      this.state = !this.state;
     },
     hide() {
       document.getElementById("logo").style.display = "none";

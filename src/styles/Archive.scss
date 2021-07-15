@@ -5,7 +5,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     align-content: space-around;
-    margin-top: 40px;
+    margin-top: 100px;
     margin-left: 220px;
     cursor: pointer;
     gap: 20px;
@@ -16,7 +16,8 @@
     display: flex;
     border: 1px solid rgb(241, 233, 233);
     width: 190px;
-    height: 110px;
+    min-height: 180px;
+    height: inherit;
     outline: none;
     border-radius: 7px;
     background: $dull_white;
@@ -42,6 +43,7 @@
         font-weight: 500;
         display: flex;
         padding-left: 10px;
+        padding-bottom: 20px;
         word-break: break-word;
 	    overflow-wrap: break-word;
         
@@ -57,13 +59,19 @@
 	overflow-wrap: break-word;
 }
 
+.note-icons{
+    display: none;
+    margin-top: -20px;
+    margin-right: -350px;
+}
 
-// .note-icons:hover{
-// .note-icons{
-//     display: block;
-//     margin-left: 270px;
-// }
-// }
+.notes:hover{
+.note-icons{
+    display: block;
+    margin-top: -18px;
+    margin-right: -350px;
+}
+}
 
 
 

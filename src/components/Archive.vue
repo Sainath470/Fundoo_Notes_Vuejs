@@ -5,9 +5,9 @@
         <div class="notes" id="notes">
           <h4>{{ note.title }}</h4>
           <p>{{ note.description }}</p>
-        </div>
-        <div class="note-icons">
-          <Icons />
+          <div class="note-icons">
+            <Icons :cardId="note.id" v-if="state == 1" />
+          </div>
         </div>
       </div>
     </div>
@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       list: {},
+      state: 1,
     };
   },
   mounted() {

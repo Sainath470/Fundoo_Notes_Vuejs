@@ -10,10 +10,14 @@
       <i class="fas fa-palette"></i>
     </div>
     <div class="fourth-icon">
-      <i clss="fas fa-image"></i>
+      <i class="fas fa-image"></i>
     </div>
     <div class="fifth-icon">
-      <i class="fas fa-archive" @click="moveToArchive()"></i>
+      <i
+        class="fas fa-archive"
+        @click="moveToArchive()"
+        v-on:click.right="restoreNoteToDisplay"
+      ></i>
     </div>
     <div class="sixth-icon">
       <i @click="clickedFunction" class="fas fa-ellipsis-v"></i>
@@ -59,9 +63,9 @@ export default {
           return error;
         });
     },
-    moveToArchive(clickedId) {
+    moveToArchive() {
       let userDate = {
-        id: clickedId,
+        id: this.cardId,
       };
       console.log(userDate);
       service
@@ -75,9 +79,9 @@ export default {
           return error;
         });
     },
-    restoreNoteToDisplay(clickedId) {
+    restoreNoteToDisplay() {
       let userDate = {
-        id: clickedId,
+        id: this.cardId,
       };
       console.log(userDate);
       service

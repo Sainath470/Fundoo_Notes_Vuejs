@@ -33,10 +33,10 @@ export default {
       description: "",
     };
   },
-  // created() {
-  //   this.title = this.cardContent.title;
-  //   this.description = this.cardContent.description;
-  // },
+  created() {
+    this.title = this.cardContent.title;
+    this.description = this.cardContent.description;
+  },
   methods: {
     changeState() {
       this.state = !this.state;
