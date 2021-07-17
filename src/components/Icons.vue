@@ -22,9 +22,23 @@
     <div class="sixth-icon">
       <i @click="clickedFunction" class="fas fa-ellipsis-v"></i>
       <div ref="myDropdown" class="dropdown-content">
-        <a @click="handleSubmit()">Delete note</a>
-        <a>Add Label</a>
-        <a>Edit Label</a>
+        <div v-if="state == true">
+          <a @click="handleSubmit()">Delete note</a>
+          <a @click="changeState()">Add Label</a>
+          <a>Edit Label</a>
+        </div>
+      </div>
+    </div>
+    <div ref="myDropdown" v-if="state == false" class="createLabel-container">
+      <div class="create-label">
+        <h1>Label note</h1>
+        <input v-model="label_name" placeholder="Enter label name" />
+        <div class="create-label-icon">
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="labels-display">
+          <GetLabel v-if="flag == true" />
+        </div>
       </div>
     </div>
   </div>
@@ -32,14 +46,24 @@
 
 <script>
 import service from "../Services/User";
+import GetLabel from "./GetLabel.vue";
+
 export default {
   props: ["cardId"],
+  components: {
+    GetLabel,
+  },
   data() {
     return {
       clickedCard: "",
+      state: true,
+      flag: true,
     };
   },
   methods: {
+    changeState() {
+      this.state = !this.state;
+    },
     clickedFunction(event) {
       this.$refs.myDropdown.classList.toggle("show");
       return event;
@@ -73,6 +97,7 @@ export default {
         .then((response) => {
           console.log(response);
           alert("Note moved to Archive");
+          location.reload();
         })
         .catch((error) => {
           alert("Error");
@@ -89,6 +114,7 @@ export default {
         .then((response) => {
           console.log(response);
           alert("Note Unarchived");
+          return response;
         })
         .catch((error) => {
           alert("Error");

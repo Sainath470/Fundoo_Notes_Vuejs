@@ -1,12 +1,12 @@
 <template>
   <div class="main-container">
-    <div class="container" id="blur">
+    <div class="container">
       <div v-for="note in list" v-bind:key="note.id" class="notes-container">
         <div class="notes" id="notes">
           <h4>{{ note.title }}</h4>
           <p>{{ note.description }}</p>
-          <div class="note-icons">
-            <Icons :cardId="note.id" v-if="state == 1" />
+          <div class="note-icons" id="note-icons">
+            <Icons :cardId="note.id" />
           </div>
         </div>
       </div>
@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       list: {},
-      state: 1,
     };
   },
   mounted() {

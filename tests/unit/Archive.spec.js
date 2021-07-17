@@ -1,42 +1,38 @@
 /***********************************************************************************
- * Purpose : To test UpdateNote component
+ * Purpose : To test Archive component
  *
- * @file : UpdateNote.spec.js
+ * @file : Archive.spec.js
  * @author : Venkata Sainath <akulavenkatasainath1997@gmail.com>
  * @version : 1.0
  * @since : 7/14/2021
  *
  **********************************************************************************/
-import UpdateNote from "../../src/components/UpdateNote.vue";
+import Archive from "../../src/components/Archive.vue";
 import { createLocalVue, shallowMount } from "@vue/test-utils";
 
 describe("UpdateNote.vue", () => {
-  let wrapper = shallowMount(UpdateNote);
+  let wrapper = shallowMount(Archive);
   beforeEach(() => {
     const localVue = createLocalVue();
-    wrapper = shallowMount(UpdateNote, localVue);
+    wrapper = shallowMount(Archive, localVue);
   });
   test("setup correctly", () => {
     expect(true).toBe(true);
   });
 
   it("renders a vue instance", () => {
-    expect(shallowMount(UpdateNote).vm).toBeTruthy();
+    expect(shallowMount(Archive).vm).toBeTruthy();
   });
 
-  it("it button to update the selected Note", () => {
-    expect(wrapper.find("#update-close")).toBeTruthy();
-  });
-
-  it("it has a icons component only appear when hovered and perform actions", () => {
-    expect(wrapper.find("#Icons-hover")).toBeTruthy();
+  it("it has a container in which the notes are displayed", () => {
+    expect(wrapper.find(".main-container")).toBeTruthy();
   });
 
   it("it has a input field to take title", () => {
-    expect(wrapper.find("#title-name")).toBeTruthy();
+    expect(wrapper.find("#notes")).toBeTruthy();
   });
 
   it("it has a text area field to take input description", () => {
-    expect(wrapper.find("#input-description")).toBeTruthy();
+    expect(wrapper.find("#note-icons")).toBeTruthy();
   });
 });

@@ -16,8 +16,8 @@
     display: flex;
     border: 1px solid rgb(241, 233, 233);
     width: 190px;
-    min-height: 180px;
-    height: inherit;
+    min-height: 100px;
+    max-height: 400px;
     outline: none;
     border-radius: 7px;
     background: $dull_white;
@@ -43,6 +43,7 @@
         font-weight: 500;
         display: flex;
         padding-left: 10px;
+        padding-right: 10px;
         padding-bottom: 20px;
         word-break: break-word;
 	    overflow-wrap: break-word;
@@ -63,13 +64,15 @@
     display: none;
     margin-top: -20px;
     margin-right: -350px;
+     
 }
 
-.notes:hover{
+.notes-container:hover{
 .note-icons{
     display: block;
-    margin-top: -18px;
+    margin-top: -10px;
     margin-right: -350px;
+     height: inherit;
 }
 }
 

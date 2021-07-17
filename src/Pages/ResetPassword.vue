@@ -4,7 +4,7 @@
       <h3>Reset Password</h3>
       <div class="reset-form">
         <input
-          class = "input-box-password"
+          class="input-box-password"
           type="password"
           v-model="new_password"
           placeholder="new password"
@@ -13,14 +13,16 @@
       </div>
       <div class="reset-form">
         <input
-          class = "input-box-confirm"
+          class="input-box-confirm"
           type="password"
           v-model="confirm_password"
           placeholder="confirm password"
           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
         />
       </div>
-      <button type="submit" @click="handleSubmit();" class="update-button">update</button>
+      <button type="submit" @click="handleSubmit()" class="update-button">
+        update
+      </button>
     </div>
   </form>
 </template>
@@ -30,8 +32,7 @@ import service from "../Services/User";
 
 export default {
   name: "ResetPassword",
-  components: {
-  },
+  components: {},
   data() {
     return {
       new_password: "",
@@ -43,17 +44,17 @@ export default {
       let userData = {
         new_password: this.new_password,
         confirm_password: this.confirm_password,
-        token: this.$route.params.token
+        token: this.$route.params.token,
       };
       service.userResetPassword(userData).then((response) => {
         console.log(response.data.token);
-        if(response.data.status == 401){
+        if (response.data.status == 401) {
           alert("Reset token has been expired");
         }
-        if(response.data.status == 201){
-        alert("Password reset successfull..!");
-        this.$router.push('/login');
-        return response;
+        if (response.data.status == 201) {
+          alert("Password reset successfull..!");
+          this.$router.push("/login");
+          return response;
         }
       });
     },

@@ -7,11 +7,21 @@
       </div>
       <div class="user-details">
         <div class="input-box">
-          <input type="name" v-model="firstName" required pattern="[A-Za-z]{3,12}"/>
+          <input
+            type="name"
+            v-model="firstName"
+            required
+            pattern="[A-Za-z]{3,12}"
+          />
           <label>First name</label>
         </div>
         <div class="input-box">
-          <input type="name" v-model="lastName" required pattern="[A-Za-z]{3,12}"/>
+          <input
+            type="name"
+            v-model="lastName"
+            required
+            pattern="[A-Za-z]{3,12}"
+          />
           <label>Last name</label>
         </div>
         <div class="user-name">

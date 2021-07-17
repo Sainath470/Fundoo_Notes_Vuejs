@@ -59,6 +59,8 @@ button:hover{
         font-weight: 500;
         display: flex;
         padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
         word-break: break-word;
 	    overflow-wrap: break-word;
         
@@ -74,28 +76,18 @@ button:hover{
 	overflow-wrap: break-word;
 }
 
-
-.fa-trash-alt{
-    display: flex;
-    margin-top: 90px;   
-    letter-spacing: 20px;
-    margin-left: -40px;
-    font-size: 12px;
+.note-icons{
+       display: none;
+    margin-top: 10px;
+    margin-left: 270px;
 }
 
-.fa-trash-restore-alt{
-    display: block;
-    margin-top: 90px;   
-    letter-spacing: 20px;
-    margin-left:10px;
-    font-size: 12px;
-}
-
-
-.note-icons:hover{
+.notes-container:hover{
 .note-icons{
     display: block;
-    // margin-left: 270px;
+    margin-top: -19px;
+    margin-left: 140px;
+    height: inherit;
 }
 }
 

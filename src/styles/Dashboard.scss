@@ -162,7 +162,26 @@ span{
     cursor: pointer;
 }
 
+#blur.active{
+    filter:blur(5px);
+}
 
+#popup{
+    position: fixed;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    margin-top: 120px;
+}
 
 @media (min-width: 600px) {
 

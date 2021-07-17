@@ -8,20 +8,9 @@
         <div class="notes" id="notes">
           <h4>{{ note.title }}</h4>
           <p>{{ note.description }}</p>
-        </div>
-        <div class="note-icons">
-          <i
-            id="delete-icon"
-            class="fas fa-trash-alt"
-            @click="moveToTrash(note.id)"
-          ></i>
-        </div>
-        <div class="note-icons">
-          <i
-            id="restore-icon"
-            class="fas fa-trash-restore-alt"
-            @click="restoreNote(note.id)"
-          ></i>
+          <div class="note-icons">
+            <TrashIcons :cardId="note.id" />
+          </div>
         </div>
       </div>
     </div>
@@ -30,10 +19,16 @@
 
 <script>
 import service from "../Services/User";
+import TrashIcons from "./IconsForTrash.vue";
+
 export default {
+  components: {
+    TrashIcons,
+  },
   data() {
     return {
       list: {},
+      clickedCard: "",
     };
   },
   mounted() {
@@ -41,40 +36,6 @@ export default {
       console.log(response);
       this.list = response.data;
     });
-  },
-  methods: {
-    moveToTrash(clickedId) {
-      let userDate = {
-        id: clickedId,
-      };
-      console.log(userDate);
-      service
-        .userDeleteNoteForever(userDate)
-        .then((response) => {
-          console.log(response);
-          alert("Note deleted forever");
-        })
-        .catch((error) => {
-          alert("Error");
-          return error;
-        });
-    },
-    restoreNote(clickedId) {
-      let userDate = {
-        id: clickedId,
-      };
-      console.log(userDate);
-      service
-        .userRestoreNote(userDate)
-        .then((response) => {
-          console.log(response);
-          alert("Note restored");
-        })
-        .catch((error) => {
-          alert("Error");
-          return error;
-        });
-    },
   },
 };
 </script>

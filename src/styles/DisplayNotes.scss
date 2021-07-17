@@ -17,7 +17,6 @@
     width: 190px;
     min-height: 100px;
     max-height: 500px;
-    // height: inherit;
     outline: none;
     border-radius: 7px;
     background: $dull_white;
@@ -75,7 +74,23 @@
 }
 }
 
-#blur.active{
+#popup1{
+    position: fixed;
+    top:70%;
+    margin-left: 840px;
+    transform: translate(-50%, 50%);
+    opacity: 10;
+    transition: 0.5s;
+}
+
+#popup1.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    margin-top: 130px;
+}
+
+#blur1.active{
 	filter: blur(8px);
 }
 

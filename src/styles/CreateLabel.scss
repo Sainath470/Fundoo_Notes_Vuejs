@@ -1,0 +1,47 @@
+.container{
+    width:220px;
+    height:150px;
+    border: 1px solid rgb(236, 219, 219);
+    border-radius: 2px;
+    background-color: white;
+    transform: translate(250%, -200%);
+}
+
+h1{
+    display: flex;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input{
+    display: flex;
+    border: none;
+    margin-left: 20px;
+    outline: none;
+    width: 110px;
+    font-size: 13px;
+    border-bottom: 1px solid black;
+}
+
+.create-icon{
+    margin-top: -18px;
+    margin-left: 95px;
+    cursor: pointer;
+}
+
+button{
+    margin-left: 160px;
+    margin-top: 65px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+

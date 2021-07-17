@@ -5,7 +5,7 @@
         <div>
           <h3>Forgot Password</h3>
           <input
-            class = "input-box-email"
+            class="input-box-email"
             type="email"
             v-model="email"
             placeholder="Email Address"
@@ -19,7 +19,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import service from "../Services/User";
